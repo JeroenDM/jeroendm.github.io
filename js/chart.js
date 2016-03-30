@@ -34,12 +34,12 @@ d3.tsv("/data/test1.txt", type, function(error, data) {
     y.domain(d3.extent(data, function(d) { return d.snelheid; }));
 
     svg.append("g")
-        .attr("class", "x axis")
+        .attr("class", "axis")
         .attr("transform", "translate(0," + height + ")")
         .call(xAxis);
 
     svg.append("g")
-        .attr("class", "y axis")
+        .attr("class", "axis")
         .call(yAxis)
       .append("text")
         .attr("transform", "rotate(-90)")
