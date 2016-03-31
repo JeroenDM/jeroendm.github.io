@@ -57,14 +57,18 @@ var plotModule = (function () {
     x.domain(d3.extent(data, function(d) { return +d.tijd; }));
     y.domain(d3.extent(data, function(d) { return +d.snelheid; }));
 
-    svg.select(".x.axis")
+    // update data of .line tag
+    svg.select(".line").datum(data);
+
+    // add transition to the update
+    var t = svg.transition().duration(750);
+    t.select(".x.axis")
         .call(xAxis);
 
-    svg.select(".y.axis")
+    t.select(".y.axis")
         .call(yAxis);
 
-    svg.select(".line")
-        .datum(data)
+    t.select(".line")
         .attr("d", line);
   }
 
