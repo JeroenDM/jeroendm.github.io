@@ -14,8 +14,13 @@
 		<svg id = "chart">
 		</svg>
 
-		<select id="fileSelection" onchange="dataModule.update()">
-		</select>
+		<form class="form-control">
+			<div class="form-group">
+			<label>Select input file</label>
+			<select multiple class="form-control" id="fileSelection" onchange="dataModule.update()">
+			</select>
+			</div>
+		</form>
 
 		<!-- dependencies for d3 -->
     <script src="js/d3.min.js"></script>
