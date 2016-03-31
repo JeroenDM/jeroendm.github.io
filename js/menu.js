@@ -27,3 +27,30 @@ var dataModule = (function() {
     update: updatePlot
   }
 })();
+
+var formModule = (function() {
+  var header = ["koppel", "stroom"];
+  var labels = ["Torque", "Current"];
+  var $div = d3.select("#yVarSelection");
+
+  // some realy ugly dom handling
+  function updateYVars() {
+    for (i=0; i<labels.length; i++) {
+      var $label = $div.append("div")
+                    .attr("class", "radio")
+                    .append("label")
+      $label.append("input")
+            .attr("type", "radio")
+            .attr("name", "yVarSelection")
+            .attr("value", header[i])
+      $label.append("p").text(labels[i]);
+    }
+
+  }
+
+  return {
+    updateYVars: updateYVars
+  }
+})();
+
+formModule.updateYVars();
