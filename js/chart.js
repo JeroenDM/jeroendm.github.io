@@ -15,7 +15,7 @@ var plotModule = (function () {
     .y(function(d) { return y(d.snelheid); })
     .interpolate("basis");
 
-  var svg = d3.select("body").append("svg")
+  var svg = d3.select("#chart")
       .attr("width", width + margin.left + margin.right)
       .attr("height", height + margin.top + margin.bottom)
     .append("g")
