@@ -61,4 +61,3 @@ var plotModule = (function () {
 })();
 
 plotModule.init();
-d3.tsv("/data/test1.txt", plotModule.update);
