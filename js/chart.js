@@ -21,24 +21,22 @@ var plotModule = (function () {
     .append("g")
       .attr("transform", "translate(" + margin.left + "," + margin.top + ")");
 
-  // Public functions
-  function initPlot() {
-    updatePlot(0, [{tijd: 0, snelheid: 0}]);
-  }
 
-  function updatePlot(error, data) {
-    if (error) throw error;
+  // Public functions
+  function createPlot() {
+    // initial data on plot
+    var data = [{tijd: 0, snelheid: 0}];
 
     x.domain(d3.extent(data, function(d) { return +d.tijd; }));
     y.domain(d3.extent(data, function(d) { return +d.snelheid; }));
 
     svg.append("g")
-        .attr("class", "axis")
+        .attr("class", "x axis")
         .attr("transform", "translate(0," + height + ")")
         .call(xAxis);
 
     svg.append("g")
-        .attr("class", "axis")
+        .attr("class", "y axis")
         .call(yAxis)
       .append("text")
         .attr("transform", "rotate(-90)")
@@ -53,11 +51,30 @@ var plotModule = (function () {
         .attr("d", line);
   }
 
+  function updatePlot(error, data) {
+    if (error) throw error;
+
+    x.domain(d3.extent(data, function(d) { return +d.tijd; }));
+    y.domain(d3.extent(data, function(d) { return +d.snelheid; }));
+
+    svg.select(".x.axis")
+        .call(xAxis);
+
+    svg.select(".y.axis")
+        .call(yAxis);
+
+    svg.select(".line")
+        .datum(data)
+        .attr("d", line);
+  }
+
   // Reveal public vars and funcs
   return {
-    init: initPlot,
+    create: createPlot,
     update: updatePlot
   }
 })();
 
-plotModule.init();
+plotModule.create();
+
+//var test3 = [{tijd: 0, snelheid: 0}, {tijd: 1, snelheid: 2}, {tijd: 2, snelheid: 1}];
