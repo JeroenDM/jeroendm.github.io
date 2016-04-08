@@ -2,17 +2,6 @@
 var fileNames = ["test1.txt", "test2.txt"];
 var path = "/data/";
 
-var selectionModule = (function() {
-  var $select = d3.select("#fileSelection");
-
-  for (i=0; i < fileNames.length; i++) {
-    $select.append("option")
-            .attr("value", fileNames[i])
-            .text(fileNames[i]);
-  }
-
-})();
-
 var dataModule = (function() {
   // initialize data acces
 
@@ -29,6 +18,14 @@ var dataModule = (function() {
 })();
 
 var formModule = (function() {
+  var $select = d3.select("#fileSelection");
+
+  for (i=0; i < fileNames.length; i++) {
+    $select.append("option")
+            .attr("value", fileNames[i])
+            .text(fileNames[i]);
+  }
+
   var header = ["koppel", "stroom"];
   var labels = ["Torque", "Current"];
   var $div = d3.select("#yVarSelection");
