@@ -21,7 +21,7 @@
 			<div class="form-group">
 				<div id="yVarSelection"></div>
 				<label>Select input file</label>
-				<select multiple class="form-control" id="fileSelection" onchange="dataModule.update()">
+				<select multiple class="form-control" id="fileSelection" onchange="events.emit('update')">
 				</select>
 			</div>
 
@@ -40,7 +40,9 @@
 		<!-- dependencies for d3 -->
     <script src="js/d3.min.js"></script>
 		<!-- custom javascript -->
+		<script src="js/events.js"></script>
 		<script src="js/chart.js"></script>
+
 		<script src="js/main.js"></script>
 
 	</div>

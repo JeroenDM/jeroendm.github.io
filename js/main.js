@@ -18,8 +18,9 @@ var dataModule = (function() {
 })();
 
 var formModule = (function() {
-  var $select = d3.select("#fileSelection");
 
+  // Init file selection menu
+  var $select = d3.select("#fileSelection");
   for (i=0; i < fileNames.length; i++) {
     $select.append("option")
             .attr("value", fileNames[i])
@@ -51,3 +52,11 @@ var formModule = (function() {
 })();
 
 formModule.updateYVars();
+
+// Add events
+events.on("update", function() {
+  dataModule.update();
+});
+events.on("update", function() {
+  console.log("Plot up to date!");
+});
