@@ -81,6 +81,8 @@ var plotModule = (function () {
 
 var dataModule = (function() {
   // initialize data acces
+  var path = "/data/";
+  var fileNames = ["test1.txt", "test2.txt"];
 
   d3.tsv(path + fileNames[0], plotModule.update);
 
@@ -89,14 +91,21 @@ var dataModule = (function() {
       d3.tsv(path + name, plotModule.update);
   }
 
+  function getFileNames() {
+    return fileNames;
+  }
+
   return {
-    update: updatePlot
+    update: updatePlot,
+    getFileNames: getFileNames
   }
 })();
 
 var formModule = (function() {
 
   // Init file selection menu
+  var fileNames = dataModule.getFileNames();
+
   var $select = d3.select("#fileSelection");
   for (i=0; i < fileNames.length; i++) {
     $select.append("option")
@@ -127,5 +136,3 @@ var formModule = (function() {
     updateYVars: updateYVars
   }
 })();
-
-//var test3 = [{tijd: 0, snelheid: 0}, {tijd: 1, snelheid: 2}, {tijd: 2, snelheid: 1}];

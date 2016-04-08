@@ -1,6 +1,4 @@
 
-var fileNames = ["test1.txt", "test2.txt"];
-var path = "/data/";
 
 plotModule.create();
 
