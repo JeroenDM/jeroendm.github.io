@@ -1,6 +1,6 @@
 
 
-plotModule.create();
+plotModule2.init();
 
 formModule.updateYVars();
 
@@ -11,3 +11,7 @@ events.on("update", function() {
 events.on("update", function() {
   console.log("Plot up to date!");
 });
+
+/* events.on("update", function() {
+  summaryModule.update();
+}); */
