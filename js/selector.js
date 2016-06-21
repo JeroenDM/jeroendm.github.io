@@ -1,5 +1,17 @@
 // Version two with dutch names and more parameters 20/06/2016
 
+// debug function
+
+function logScores() {
+    var d = bikes.getData();
+    var msg = "";
+    
+    for (var i = 0; i < d.length; ++i) {
+        msg += d[i].naam + ": " + d[i].score + " points\n";
+    }
+    console.log(msg);
+}
+
 // Module for bikes data
 //---------------------------------------------------------------------------
 var bikes = (function() {
@@ -35,6 +47,12 @@ var bikes = (function() {
 	}
     
     function updateScore(w) {
+        // if weigth are zero, make them all one to avoid bars with width zero
+        if ( w.every(elem => elem == 0) ) {
+            w = [1, 1, 1];
+            console.log("all zeros");
+        };
+        
 		maxScore = 1; // reset maxScore before every change
 		for (i = 0; i < data.length; i++) {
 			data[i].score = Math.round(
@@ -42,6 +60,7 @@ var bikes = (function() {
 				+ w[1] * data[i].betrouwbaarheid
 				+ w[2] * data[i].veiligheid
 			);
+            console.log("calculated: " + data[i].score);
 			// track max score for scaling
 			if (data[i].score > maxScore) {
 				maxScore = data[i].score;
@@ -107,14 +126,14 @@ var interaction = (function() {
 	// chache dom elements with d3.select
     //----------------------------
 	var $labels = [
+        d3.select("#useability-slider-label"),
 		d3.select("#reliability-slider-label"),
-		d3.select("#safety-slider-label"),
-		d3.select("#useability-slider-label")
+		d3.select("#safety-slider-label")
 	];
 	var $sliders = [
+        d3.select("#useability-slider"),
 		d3.select("#reliability-slider"),
-		d3.select("#safety-slider"),
-		d3.select("#useability-slider")
+		d3.select("#safety-slider")
 	];
     var $checkboxes = [];
     var ch = [false, false, false, false, false, false];
@@ -137,18 +156,16 @@ var interaction = (function() {
         console.log("slider update");
 		// update slider values array (weights)
         // TODO kan beter met d3 node() functie
-		w = [
-			document.getElementById("reliability-slider").value,
-			document.getElementById("safety-slider").value,
-			document.getElementById("useability-slider").value
-		];
+
 		// update labels with new weights
 		for (i = 0; i < $sliders.length; i++) {
+            w[i] = $sliders[i].node().value;
 			$labels[i].text(w[i]);
 		}
 		//ranking based on new weights
 		bikes.updateScore(w);
 		ranking.update();
+        logScores();
 	}
     
     function _updateSelection() {
@@ -159,6 +176,7 @@ var interaction = (function() {
         bikes.update(ch);
         ranking.render();
         ranking.update();
+        logScores();
     }
     
     // public 
