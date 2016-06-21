@@ -98,7 +98,8 @@ function drawInfoTable(){
 	var heading = ["",
                    "ontwerpsnelheid",
                    "weerstand",
-                   "beschikbare energie"
+                   "beschikbare energie",
+                   "geschikte lichaamslengte"
 	];	//.append("table")
 	table.append("thead")
 		.append("tr")
@@ -118,6 +119,7 @@ function drawInfoTable(){
 	tr.append('td').html(function(m) { return m.ontwerpsnelheid; });
 	tr.append('td').html(function(m) { return m.weerstand; });
 	tr.append('td').html(function(m) { return m.nae; });
+    tr.append('td').html(function(m) { return (+m.minMaat/10) + " cm - " + (+m.maxMaat/10) + " cm";});
 }
 
 // Module for interaction (bike data depentent, if csv changes, this has to be adapted)
