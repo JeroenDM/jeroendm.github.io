@@ -25,7 +25,7 @@ var bikes = (function() {
         for (i = 0; i < data.length; i++) {
             data[i].bruikbaarheid = (parseFloat(data[i].bediening)
                                      + parseFloat(data[i].batterij)
-                                     + parseFloat(data[i].bediening)
+                                     + parseFloat(data[i].staander)
                                      + parseFloat(data[i].regeling)) * 100 / 4;
             data[i].betrouwbaarheid = +data[i].montage * 100;
             data[i].veiligheid = (+data[i].remmen * 20 + parseFloat(data[i].verlichting) * 100) / 2;
