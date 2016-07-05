@@ -79,7 +79,7 @@ function update() {
         var small = wheelCirc * totalRatioSmall * 50 / 60 * 3.6; // 50 rpm / 60 seconds per minute(3.6 to km/h)
         
         var totalRatioBig = bikeData[i].gearRatios[1] * parseInt(front) / parseInt(back);
-        var big = wheelCirc * totalRatioBig * 50 / 60 * 3.6; // 50 rpm / 60 seconds per minute(3.6 to km/h)
+        var big = wheelCirc * totalRatioBig * 70 / 60 * 3.6; // 50 rpm / 60 seconds per minute(3.6 to km/h)
         
         plotData[i].small = small;
         plotData[i].big = big;
