@@ -35,7 +35,6 @@ li {
 }
 
 li.el:after {
-	/*Using a Bootstrap glyphicon as the bullet point*/
 	content: "\e162";
 	font-family: 'Glyphicons Halflings';
 	font-size: 9px;
@@ -45,11 +44,19 @@ li.el:after {
 }
 
 li.tool:after {
-	/*Using a Bootstrap glyphicon as the bullet point*/
 	content: "\e185";
 	font-family: 'Glyphicons Halflings';
 	font-size: 9px;
 	/*float: left;*/
 	margin-left: 3px;
 	color: black;
+}
+
+li.tool.el:after {
+    content: "\e162 \e185";
+    font-family: 'Glyphicons Halflings';
+    font-size: 9px;
+    /*float: left;*/
+    margin-left: 3px;
+    color: black;
 }
