@@ -39,10 +39,6 @@ stats "\e185"
 flash "\e162"
 */
 
-li {
-	display: block;
-}
-
 li.el:after {
 	content: "\e162";
 	font-family: 'Glyphicons Halflings';
