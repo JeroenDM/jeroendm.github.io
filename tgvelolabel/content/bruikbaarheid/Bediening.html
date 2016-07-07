@@ -8,6 +8,8 @@
 <link rel="stylesheet"  type="text/css"  href="../../css/bootstrap.css">
 <link rel="stylesheet" type="text/css" href="../../css/site_specific.css">
 
+<link rel="stylesheet" href="../../css/jqmath-0.4.3.css">
+
 </head>
     
 <body>
@@ -25,33 +27,151 @@
     
     <div class="row">
         <div class="col-md-12">
+            <h1>Bediening</h1>
+            <h1 class="subtitle">Hoe goed kan men de functies van de fiets bedienen?</h1>
+
+            <p class="intro">Verschillende fietsen laten zich op een verschillende manier bedienen. Remmen, versnellingen, bel, lichten en motorondersteuning hebben hendels, knoppen of draaigrepen nodig om te kunnen functioneren. De kwaliteitsparameter 'bediening' brengt in kaart hoe eenvoudig dit gebeurt.</p>
+        </div>
+        <div class="col-md-6">
+            <h2>Definitie</h2>
+
+            <p>De score 'Bediening' is een vergelijking met het maximaal haalbare.Een hoge score betekent:</p>
+            <ul>
+                <li>Versnellingen worden intuïtief en gemakkelijk bediend</li>
+                <li>Beide remgrepen zijn vlot bereikbaar, ook voor kleine handen</li>
+                <li>De bel kan bediend worden zonder een hand van het stuur te halen</li>
+                <li>Een mogelijk aanwezige motor kan intuiïtief blind bediend worden zonder handen van het stuur te halen</li>
+                <li>Lichten gaan automatisch aan of kunnen bediend worden als men in het zadel zit.</li>
+            </ul>
             
-        <h1>Bediening</h1>
-        <h1 class="subtitle">Hoe goed kan men de functies van de fiets gebruiken?</h1>
-
-        <h2>Template part 1</h2>
-
-        <p>De score is gelijk aan het percentage van het maximaal mogelijke punten, dus het gemiddelde van de waardes uit testpunten 1 tot 5. De metingen zijn gebaseerd op observatie, maar er is ook informatie van de fabrikant nodig.</p>
-
-        <h2>Template part two</h2>
-
-        <p>Het is al geruime tijd een bekend gegeven dat een lezer, tijdens het bekijken van de layout van een pagina, afgeleid wordt door de tekstuele inhoud. Het belangrijke punt van het gebruik van Lorem Ipsum is dat het uit een min of meer normale verdeling van letters bestaat, in tegenstelling tot "Hier uw tekst, hier uw tekst" wat het tot min of meer leesbaar nederlands maakt. Veel desktop publishing pakketten en web pagina editors gebruiken tegenwoordig Lorem Ipsum als hun standaard model tekst, en een zoekopdracht naar "lorem ipsum" ontsluit veel websites die nog in aanbouw zijn. Verscheidene versies hebben zich ontwikkeld in de loop van de jaren, soms per ongeluk soms expres (ingevoegde humor en dergelijke).</p>
             
+        </div>
+        <div class="col-md-6">
+            <h2>Meten</h2>
+
+            <p>De metingen zijn gebaseerd op observatie. Geef een antwoord op onderstaande vragen.</p>
+            <ol><p>Versnellingen (gemiddelde waardes van punt a tot f)</p>
+            <ol type"a">
+                <div class="form-group">
+  <label class="col-md-4 control-label" for="Aantal versnellingsbedieningen">Aantal versnellingsbedieningen</label>  
+  <div class="col-md-4">
+  <input id="Aantal versnellingsbedieningen" name="Aantal versnellingsbedieningen" placeholder="0" class="form-control input-md" type="text">
+  <span class="help-block">Hoeveel bedieningen zijn er om de overbrengingsverhouding tussen pedalen en wiel te kiezen? Waarde wordt rechtstreeks gebruikt. Voor een fiets met automatische versnellingen of zonder versnellingen, geef 0</span>  
+  </div>
+</div>
+                </ol></ol>
+            
+            <form class="form-inline">
+                  <div class="form-group">
+                    <label>Covered distance in meter</label>
+                    <p>Distance covered on the ground for one pedal stroke.</p>
+                    <input type="number" class="form-control" id="distance" placeholder=0 min=0 max=10 value = 0>
+                    <span class="unit">m</span>
+                  </div>
+            </form>
+            <br/>
+            <form class="form">
+                <div class="form-group">
+                    <label>Gear</label>
+                    <p>Highest or lowest gear?</p>
+                    <select class="form-control" id="selectRpm">
+                      <option value=0>Lowest gear</option>
+                      <option value=1>Highest gear</option>
+                    </select>
+                  </div>
+            </form>
+            <form class="form-inline">
+                <div class="form-group">
+                    <label>Speed @ <span id="outputRpm">50</span> rpm</label>
+                    <p><span id="speed">99</span> km/h</p>
+                </div>
+                <button type="button" class="btn btn-success" onclick="calcSpeed()">Calculate</button>
+            </form>
         </div>
     </div>
     
     <div class="row">
-        <div class="col-md-6">
-            <h2>Een kollom</h2>
-            <p>Het is al geruime tijd een bekend gegeven dat een lezer, tijdens het bekijken van de layout van een pagina, afgeleid wordt door de tekstuele inhoud. Het belangrijke punt van het gebruik van Lorem Ipsum is dat het uit een min of meer normale verdeling van letters bestaat, in tegenstelling tot "Hier uw tekst, hier uw tekst" wat het tot min of meer leesbaar nederlands maakt. Veel desktop publishing pakketten en web pagina editors gebruiken tegenwoordig Lorem Ipsum als hun standaard model tekst, en een zoekopdracht naar "lorem ipsum" ontsluit veel websites die nog in aanbouw zijn. Verscheidene versies hebben zich ontwikkeld in de loop van de jaren, soms per ongeluk soms expres (ingevoegde humor en dergelijke).</p>
-        </div>
-        <div class="col-md-6">
-            <h2>Nog een kollom</h2>
-            <p>Het is al geruime tijd een bekend gegeven dat een lezer, tijdens het bekijken van de layout van een pagina, afgeleid wordt door de tekstuele inhoud. Het belangrijke punt van het gebruik van Lorem Ipsum is dat het uit een min of meer normale verdeling van letters bestaat, in tegenstelling tot "Hier uw tekst, hier uw tekst" wat het tot min of meer leesbaar nederlands maakt. Veel desktop publishing pakketten en web pagina editors gebruiken tegenwoordig Lorem Ipsum als hun standaard model tekst, en een zoekopdracht naar "lorem ipsum" ontsluit veel websites die nog in aanbouw zijn. Verscheidene versies hebben zich ontwikkeld in de loop van de jaren, soms per ongeluk soms expres (ingevoegde humor en dergelijke).</p>
+        <div class="col-md-12">
+            <h2>Lessen voor een eenvoudige fietsbeoordeling</h2>
+            <p>Tabellen om het versnellingsbereik van verschillende systemen te vergelijken hebben niet veel praktisch nut zonder de informatie over de bandenmaat en de overbrengingsverhouding tussen de tandwielen waar de ketting op loopt. Om een goede fietskeuze te maken moet men het snelheidsgebied kennen, de trappen 50 en 70 kiezen, en dan beoordelen  of men voldoende stappen heeft in het snelheidsgebied waar de fiets het meest gebruikt zal worden.</p>
         </div>
     </div>
+        
+	<div class="row">
+        <div class="col-md-12">
+            <h2>Vergelijk verschillende interne versnelsnaven</h2>
+        </div>
+		<div class="col-md-4">
+        <p>In this section you can compare the bicycle speed at 50 rpm and 70 rpm cadence for different gears.</p> 
+			<form class="form">
+			  <div class="form-group">
+			    <label>Wheel size</label>
+                  <p>The diameter of the rear wheel in inches?</p>
+					<select class="form-control" id="wheelSize">
+					  <option value=28>28 inch</option>
+					  <option value=26>26 inch</option>
+					</select>
+			  </div>
+			  <div class="form-group">
+			    <label># chainring tooth</label>
+                  <p> Number of tooth at the crank</p>
+			    <input type="number" class="form-control" id="front" placeholder=46 min=10 max=80 value="46">
+			  </div>
+			  <div class="form-group">
+			    <label># sprocket tooth</label>
+                  <p>Number of tooth at the back</p>
+			    <input type="number" class="form-control" id="back" placeholder=22 min=5 max=50 value = 22>
+			  </div>
+				<!-- // page refreshes because button is in form tag.
+				// therefore add ;return false; to the onclick callback -->
+				<button type="button" class="btn btn-success" onclick="update()">Update</button> <!--return false;-->
+			</form>
+		</div>
+
+		<div class="col-md-8">
+            <div class="chartArea">
+                <h3>Available speed range</h3>
+                <div class="caption">
+                    <p>Speed range based on a cadence (or pedaling speed) of 50 rpm for to lower bound to 70 rpm for the upper bound.</p>
+                </div>
+                <div class = "chart" style="overflow-x: scroll;">
+                </div>
+            </div>
+		</div>
+	</div>
+        
+    <div class="row">
+        <div class="col-md-12">
+            <h2>Details van de berekeningen</h2>
+        </div>
+        <div class="col-md-6">
+        <h3>List of symbols</h3>
+            <p><b>$ω_c$</b> Revolution speed of pedals (cadence).</p>
+            <p><b>$D_w$</b> Rear wheel diameter in inches.</p>
+            <p><b>$T_c$</b> Number of tooth on the chainring at the crank.</p>
+            <p><b>$T_r$</b> Number of tooth on the rear wheel sprocket.</p>
+            <p><b>$r_{min}$</b> Lowest hub gear ratio</p>
+            <p><b>$r_{max}$</b> Highest hub gear ratio</p>
+        <h3>Distance to speed</h3>
+            <p>When the distance for one pedal stroke is known (in m), the speed (in km/h) for a specific cadence (in rpm) is calculated with the formula:</p>
+            <p>$v = \text"distance" ⋅ \text"cadence" ⋅ 0.06$</p>
+        </div>
+        <div class="col-md-6">
+            <h3>Minimum speed</h3>
+            
+            <p>The minimal comfortable speed is calculated using the lowest hub speed ratio $r_{min}$ and a cadence $ω_c$ of 50 rpm.</p>
+            <p>\[\table v_{min}, =, D_w ⋅ 0.0254 ⋅ π ⋅ r_{min} ⋅ T_c / T_r ⋅ ω_c/60 ⋅ 3.6\]</p>
+            <p>The conversion constant from inch to meter is 0.0254. 50 rpm is divided by 60 to convert it to revolutions per second. Finaly the result is multiplied by 3.6 to convert to km/h. A calculation exaple for the Rohloff 14.</p>
+            <p>\[\table v_{min}, =, 28⋅0.0254⋅3.1415⋅0.279 ⋅ 46 / 22 ⋅ 50/ 60 ⋅ 3.6; , =, 3.9 \text" km/h" \]</p>
+            
+            <h3>Maximum speed</h3>
+            
+            <p>Analog to the minimum speed, the maximum is calculated for a Rohlof using $r_{max}$ and a cadence $ω_c$ of 70 rpm.</p>
+            <p>\[\table v_{min}, =, D_w ⋅ 0.0254 ⋅ π ⋅ r_{max} ⋅ T_c / T_r ⋅ ω_c/60 ⋅ 3.6; , =, 28⋅0.0254⋅3.1415⋅1.467 ⋅ 46 / 22 ⋅ 70/ 60 ⋅ 3.6; , =, 28.8 \text" km/h" \]</p>
+        </div>
+    </div>
+    
 </div>
- 
 
 <!-- End credits at the bottom of the page, contact information and names -->
 <div id="footer">
@@ -63,6 +183,14 @@
         </p>
     </div>
 </div>
-    
+
+<!-- dependencies for d3 -->
+<script src="../../js/d3.min.js"></script>
+<!-- custom javascript -->
+<script src="../../js/jquery-1.4.3.min.js"></script>
+<script src="../../js/jqmath-etc-0.4.4.min.js" charset="utf-8"></script>
+<script src="../../js/trap_modules.js"></script>
+<script src="../../js/trap_main.js"></script>    
+
 </body>
 </html>
