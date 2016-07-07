@@ -49,123 +49,65 @@
         <div class="col-md-6">
             <h2>Meten</h2>
 
-            <p>De metingen zijn gebaseerd op observatie. Geef een antwoord op onderstaande vragen.</p>
-            <ol>
-                <li>Versnellingen (gemiddelde waardes van punt a tot f)</li>
- 
-                Hoeveel bedieningen zijn er om de overbrengingsverhouding tussen pedalen en wiel te kiezen? Waarde wordt rechtstreeks gebruikt. Voor een fiets met automatische versnellingen of zonder versnellingen, geef 0
-                </ol>
+            <p>De metingen zijn gebaseerd op observatie. Geef een antwoord op onderstaande vragen.<br>
+            De score is gelijk aan het percentage van de maximaal mogelijke score, dat is 1 min het gemiddelde van de waardes uit testpunten 1 tot 5. Tenzij anders aangegeven wordt per testpunt de waarde “1” gegeven als het antwoord op de vraag positief is.</p>
             
-            <form class="form-inline">
-                  <div class="form-group">
-                    <label>Covered distance in meter</label>
-                    <p>Distance covered on the ground for one pedal stroke.</p>
-                    <input type="number" class="form-control" id="distance" placeholder=0 min=0 max=10 value = 0>
-                    <span class="unit">m</span>
-                  </div>
-            </form>
-            <br/>
-            <form class="form">
-                <div class="form-group">
-                    <label>Gear</label>
-                    <p>Highest or lowest gear?</p>
-                    <select class="form-control" id="selectRpm">
-                      <option value=0>Lowest gear</option>
-                      <option value=1>Highest gear</option>
-                    </select>
-                  </div>
-            </form>
-            <form class="form-inline">
-                <div class="form-group">
-                    <label>Speed @ <span id="outputRpm">50</span> rpm</label>
-                    <p><span id="speed">99</span> km/h</p>
-                </div>
-                <button type="button" class="btn btn-success" onclick="calcSpeed()">Calculate</button>
-            </form>
+            <ol>
+                <li>Versnellingen (gemiddelde waardes van punt a tot f)
+ 
+                <ol type="a">
+                    <li>Hoeveel bedieningen zijn er om de overbrengingsverhouding tussen pedalen en wiel te kiezen? Waarde wordt rechtstreeks gebruikt. Voor een fiets met automatische versnellingen of zonder versnellingen, geef 0. (van het moment dat er meer dan 1 bediening is, zal de waarde voor 'versnellingen' negatief zijn)</li>
+                    <li>Kan één van de bedieningen kan in een 'foute' positie gezet worden (geen index of fout gemonteerd: kan zich bijvoorbeeld verraden als ratelende ketting)?</li>
+                    <li>Is één van de bedieningen omgekeerd gemonteerd?</li>
+                    <li>Moet een hand opgehoffen worden om de versnellingen te bedienen?</li>
+                    <li>Verbiedt de gebruiksaanwijzing schakelen bij stilstand, of is dit fysiek niet mogelijk?<br/>
+                        0 = de versnelling kan van zwaarste naar lichtste gezet worden tijdens stilstand<br/>
+                        ½ = de versnelling kan niet volledig verzet worden, of er zijn bijkomende voorwaarden (bijvoorbeeld er moet eerst achteruit getrapt worden)<br/>
+                        1 = bijvoorbeeld derailleurversnelling </li> 
+                    <li>Is het schakelen tijdens het trappen mogelijk? <br/>
+                        0 = schakelen tijdens trappen mogelijk in alle omstandigheden, ook bergop bijvoorbeeld en als er kracht gezet wordt op de pedalen<br/>
+                        ½ = schakelen tijdens trappen in sommige omstandigheden mogelijk<br/>
+                        1 = schakelen tijdens trappen niet mogelijk (kan eventueel getest worden op de e-checker: toerental ongeveer 60 rpm, ongeveer 100W trapaandrijving. Als de versnelling niet geschakeld is binnen 10 rotaties mag aangenomen worden dat het niet mogelijk is. Als het wel mogelijk is om te schakelen bij kleinere belasting, bijvoorbeeld als er geen weerstand gegeven wordt aan het wiel, wordt ½ gegeven.)</li>
+                    </ol>
+                <li>Remmen; gemiddelde punt a tot d.</li>
+                <ol type="a">
+                    <li>Wat is de kleinst overmeten afstand La van de achterkant van het stuur tot de voorkant van de linkse rem (rem niet ingedrukt)?<br/>
+                    Berekende waarde = (La - 80) / (100 - 80)</li> 
+                    <li>Kleinst overmeten afstand van de achterkant van het stuur tot de voorkant van de rechtse rem (rem niet ingedrukt). <br/>
+                    Berekende waarde = (La - 80) / (100 - 80)</li> 
+                    <li>Afstand Lb op de linker remhendel waar de grootst overmeten afstand van de achterkant van het stuur tot de voorkant van de remhendel kleiner is dan 100mm. <br/>
+                    Berekende waarde = (100 - Lb) / 100</li> 
+                    <li>Afstand op de rechter remhendel waar de grootst overmeten afstand van de achterkant van het stuur tot de voorkant van de remhendel kleiner is dan 100mm.<br/>
+                    Berekende waarde = (100 - Lb) / 100</li>
+                </ol>
+                <li>Bel: Waarde 1 als een hand moet opgehoffen worden om de bel te bedienen</li>
+                <li>Motor: Als er geen motor is, waarde nul. Als er een motor is; gemiddelde punt a tot f</li>
+                <ol type="a">
+                    <li>Om de ondersteuning uit te zetten moet het hele systeem uitgezet worden. ( = Geen nul ondersteuning bij de ondersteuningsniveau’s aanwezig)</li> 
+                    <li>Om het ondersteuningsniveau te veranderen moet een hand opgehoffen worden.</li> 
+                    <li>Er is geen rechtstreeks commando ‘omhoog’ of ‘omlaag’ ter beschikking</li> 
+                    <li>Het ondersteuningsniveau moet ingesteld worden via een touch screen</li> 
+                    <li>Afstand Lc tussen de centers van de ondersteuningsnknoppen (de knoppen om de ondersteuning te veranderen)<br>
+                    Berekende waarde = (22 - Lc) / (22 - 8)</li> 
+                    <li>Ingeschreven diameter Ld van de kleinste ondersteuningsnknop<br>
+                    Berekende waarde = (22 - Ld) / (22 - 8)</li>
+                </ol>
+                <li>Lichten; gemiddelde punt a tot b</li>
+                <ol type="a">
+                    <li>Indien het voorlicht niet automatisch aangaat bij duister: het voorlicht is niet bedienbaar vanaf de zitpositie</li>
+                    <li>Indien het achterlicht niet automatisch aangaat bij duister: het achterlicht is niet bedienbaar vanaf de zitpositie</li>
+                </ol>
+            </ol>    
         </div>
     </div>
     
     <div class="row">
         <div class="col-md-12">
             <h2>Lessen voor een eenvoudige fietsbeoordeling</h2>
-            <p>Tabellen om het versnellingsbereik van verschillende systemen te vergelijken hebben niet veel praktisch nut zonder de informatie over de bandenmaat en de overbrengingsverhouding tussen de tandwielen waar de ketting op loopt. Om een goede fietskeuze te maken moet men het snelheidsgebied kennen, de trappen 50 en 70 kiezen, en dan beoordelen  of men voldoende stappen heeft in het snelheidsgebied waar de fiets het meest gebruikt zal worden.</p>
+            <p>Een groot voordeel van de fietsindustrie is de modulariteit van de onderdelen; het is vrij eenvoudig om een werkend 'Human Machine Interface' samen te stellen die werkt. Het gevaar van die modulariteit echter is dat het ook heel eenvoudig is om een combinatie te maken die eigenlijk niet optimaal is. Zeker bij elektrische fietsen wordt het stuur gemakkelijk volgezet met bedieningen die niet noodzakelijk bij elkaar passen. Veel remgrepen zijn bijvoorbeeld te kort om goed te combineren met een draaischakelaar. Het gevolg is dat mensen met kleine handen eigenlijk niet goed aan de remgrepen kunnen.</p>
         </div>
     </div>
-        
-	<div class="row">
-        <div class="col-md-12">
-            <h2>Vergelijk verschillende interne versnelsnaven</h2>
-        </div>
-		<div class="col-md-4">
-        <p>In this section you can compare the bicycle speed at 50 rpm and 70 rpm cadence for different gears.</p> 
-			<form class="form">
-			  <div class="form-group">
-			    <label>Wheel size</label>
-                  <p>The diameter of the rear wheel in inches?</p>
-					<select class="form-control" id="wheelSize">
-					  <option value=28>28 inch</option>
-					  <option value=26>26 inch</option>
-					</select>
-			  </div>
-			  <div class="form-group">
-			    <label># chainring tooth</label>
-                  <p> Number of tooth at the crank</p>
-			    <input type="number" class="form-control" id="front" placeholder=46 min=10 max=80 value="46">
-			  </div>
-			  <div class="form-group">
-			    <label># sprocket tooth</label>
-                  <p>Number of tooth at the back</p>
-			    <input type="number" class="form-control" id="back" placeholder=22 min=5 max=50 value = 22>
-			  </div>
-				<!-- // page refreshes because button is in form tag.
-				// therefore add ;return false; to the onclick callback -->
-				<button type="button" class="btn btn-success" onclick="update()">Update</button> <!--return false;-->
-			</form>
-		</div>
-
-		<div class="col-md-8">
-            <div class="chartArea">
-                <h3>Available speed range</h3>
-                <div class="caption">
-                    <p>Speed range based on a cadence (or pedaling speed) of 50 rpm for to lower bound to 70 rpm for the upper bound.</p>
-                </div>
-                <div class = "chart" style="overflow-x: scroll;">
-                </div>
-            </div>
-		</div>
-	</div>
-        
-    <div class="row">
-        <div class="col-md-12">
-            <h2>Details van de berekeningen</h2>
-        </div>
-        <div class="col-md-6">
-        <h3>List of symbols</h3>
-            <p><b>$ω_c$</b> Revolution speed of pedals (cadence).</p>
-            <p><b>$D_w$</b> Rear wheel diameter in inches.</p>
-            <p><b>$T_c$</b> Number of tooth on the chainring at the crank.</p>
-            <p><b>$T_r$</b> Number of tooth on the rear wheel sprocket.</p>
-            <p><b>$r_{min}$</b> Lowest hub gear ratio</p>
-            <p><b>$r_{max}$</b> Highest hub gear ratio</p>
-        <h3>Distance to speed</h3>
-            <p>When the distance for one pedal stroke is known (in m), the speed (in km/h) for a specific cadence (in rpm) is calculated with the formula:</p>
-            <p>$v = \text"distance" ⋅ \text"cadence" ⋅ 0.06$</p>
-        </div>
-        <div class="col-md-6">
-            <h3>Minimum speed</h3>
-            
-            <p>The minimal comfortable speed is calculated using the lowest hub speed ratio $r_{min}$ and a cadence $ω_c$ of 50 rpm.</p>
-            <p>\[\table v_{min}, =, D_w ⋅ 0.0254 ⋅ π ⋅ r_{min} ⋅ T_c / T_r ⋅ ω_c/60 ⋅ 3.6\]</p>
-            <p>The conversion constant from inch to meter is 0.0254. 50 rpm is divided by 60 to convert it to revolutions per second. Finaly the result is multiplied by 3.6 to convert to km/h. A calculation exaple for the Rohloff 14.</p>
-            <p>\[\table v_{min}, =, 28⋅0.0254⋅3.1415⋅0.279 ⋅ 46 / 22 ⋅ 50/ 60 ⋅ 3.6; , =, 3.9 \text" km/h" \]</p>
-            
-            <h3>Maximum speed</h3>
-            
-            <p>Analog to the minimum speed, the maximum is calculated for a Rohlof using $r_{max}$ and a cadence $ω_c$ of 70 rpm.</p>
-            <p>\[\table v_{min}, =, D_w ⋅ 0.0254 ⋅ π ⋅ r_{max} ⋅ T_c / T_r ⋅ ω_c/60 ⋅ 3.6; , =, 28⋅0.0254⋅3.1415⋅1.467 ⋅ 46 / 22 ⋅ 70/ 60 ⋅ 3.6; , =, 28.8 \text" km/h" \]</p>
-        </div>
-    </div>
-    
+     
 </div>
 
 <!-- End credits at the bottom of the page, contact information and names -->
