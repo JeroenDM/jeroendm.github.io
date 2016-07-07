@@ -15,7 +15,7 @@
     
     <div class="row">
         <div class="col-md-12">
-        <a href="../../index.html">
+        <a href="../../index_nl.html">
             <button class="btn btn-primary">
                 <span class="glyphicon glyphicon-home" aria-hidden="true"></span> Home
             </button>
@@ -29,56 +29,75 @@
         <h1>Template title</h1>
         <h1 class="subtitle">If needed, subtitle</h1>
             
-        <p class="intro">Hallo hallo</p>
+        <p class="intro">Bij dagelijks gebruik is een comfortabele houding op de fiets belangrijk. Enkel op basis van de framemaat is het moeilijk om te beslissen of een fiets past. Het TGVelo label introduceerd twee essentiele aspecten voor een passende fiets. Het bereik van lichaamslengte dat op de fiets past en de houding die je met die lengte kunt aannemen op de fiets.</p>
         </div>
     </div>
     
     <div class="row">
         <div class="col-md-6">
             <h2>Definitie</h2>
-            <p>Het is al geruime tijd een bekend gegeven dat een lezer, tijdens het bekijken van de layout van een pagina, afgeleid wordt door de tekstuele inhoud. Het belangrijke punt van het gebruik van Lorem Ipsum is dat het uit een min of meer normale verdeling van letters bestaat, in tegenstelling tot "Hier uw tekst, hier uw tekst" wat het tot min of meer leesbaar nederlands maakt. Veel desktop publishing pakketten en web pagina editors gebruiken tegenwoordig Lorem Ipsum als hun standaard model tekst, en een zoekopdracht naar "lorem ipsum" ontsluit veel websites die nog in aanbouw zijn. Verscheidene versies hebben zich ontwikkeld in de loop van de jaren, soms per ongeluk soms expres (ingevoegde humor en dergelijke).</p>
+            <p>De maat van de fiets wordt gedefinieerd als het bereik van lichaamslengtes die op de fiets passen. Omdat de berekening gebaseerd is op ergonomische tabellen, zal ongeveer 5% van de mensen met grootste en kleinste lichaamslengtes niet goed passen wanneer dit volgend het label wel zou moeten.</p>
         </div>
         <div class="col-md-6">
             <h2>Meten</h2>
-            <p>Het is al geruime tijd een bekend gegeven dat een lezer, tijdens het bekijken van de layout van een pagina, afgeleid wordt door de tekstuele inhoud. Het belangrijke punt van het gebruik van Lorem Ipsum is dat het uit een min of meer normale verdeling van letters bestaat, in tegenstelling tot "Hier uw tekst, hier uw tekst" wat het tot min of meer leesbaar nederlands maakt. Veel desktop publishing pakketten en web pagina editors gebruiken tegenwoordig Lorem Ipsum als hun standaard model tekst, en een zoekopdracht naar "lorem ipsum" ontsluit veel websites die nog in aanbouw zijn. Verscheidene versies hebben zich ontwikkeld in de loop van de jaren, soms per ongeluk soms expres (ingevoegde humor en dergelijke).</p>
+            <p>De maten worden onbelast gemeten, ook als er een verend zadel aanwezig is. De maten worden opgenomen voor de fiets in 4 configuraties, stuur en zadel in de extreme posities. Voor het stuur wordt laag en ver als positie 1 beschouwd en hoog en dicht als positie 2. De hoogte is van doorslaggevender belang dan lengte.</p>
         </div>
     </div>
     
     <div class="row">
         <div class="col-md-6">
             <h2>Bicycle geometrical parameters</h2>
-            <p><b>Hz</b> Saddle heigth perpendicular to ground.</p>
-            <p><b>Ls</b> Length between saddle and handle bar reference point.</p>
-            <p><b>Lz</b> Seatpost bar length from pedal to saddle.</p>
+            <p><b>Hz</b> Zadelhoogte, de kortst mogelijke afstand tussen het oppervlak van het zadel en de grond.</p>
+            <p><b>Hs</b> Stuurhoogte, de kortst mogelijke afstand tussen de verbinding van de centra van de handvatten tot de grond.</p>
+            <p><b>Ls</b> Stuurlengte of zitlengte, de afstand tussen de verbinding van de centra van de handvatten tot het snijpunt van zadeloppervlak en hartlijn van de zadelbuis, evenwijdig met de grond gemeten.</p>
+            <p><b>Lz</b> Zadellengte, de grootst mogelijke afstand tussen het snijpunt van zadeloppervlak en hartlijn van de zadelbuis tot het oppervlak van de pedaal.
+</p>
+            <p><b>α</b> Zadelbuishoek ten opzichte van de grond.</p>
             <div class="col-md-6">
-            <form>
+            <form class="form">
                 <div class="form-group">
                     <label>Hz min</label>
-                    <input type="number" class="form-control" id="front" placeholder=0 min=0 max=2 value="0">
+                    <input type="number" class="form-control" id="Hzmin" placeholder=0 min=0 max=2 value="0">
+                </div>
+                <div class="form-group">
+                    <label>Hs min</label>
+                    <input type="number" class="form-control" id="Hsmin" placeholder=0 min=0 max=2 value="0">
                 </div>
                 <div class="form-group">
                     <label>Ls min</label>
-                    <input type="number" class="form-control" id="front" placeholder=0 min=0 max=2 value="0">
+                    <input type="number" class="form-control" id="Lsmin" placeholder=0 min=0 max=2 value="0">
                 </div>
                 <div class="form-group">
                     <label>Lz min</label>
-                    <input type="number" class="form-control" id="front" placeholder=0 min=0 max=2 value="0">
+                    <input type="number" class="form-control" id="Lzmin" placeholder=0 min=0 max=2 value="0">
+                </div>
+                <div class="form-group">
+                    <label>hoek α</label>
+                    <input type="number" class="form-control" id="alpha" placeholder=0 min=0 max=2 value="0">
                 </div>
             </form>
             </div>
             <div class="col-md-6">
-            <form>
+            <form class="form">
                 <div class="form-group">
                     <label>Hz max</label>
-                    <input type="number" class="form-control" id="front" placeholder=0 min=0 max=2 value="0">
+                    <input type="number" class="form-control" id="Hzmax" placeholder=0 min=0 max=2 value="0">
+                </div>
+                <div class="form-group">
+                    <label>Hs max</label>
+                    <input type="number" class="form-control" id="Hsmax" placeholder=0 min=0 max=2 value="0">
                 </div>
                 <div class="form-group">
                     <label>Ls max</label>
-                    <input type="number" class="form-control" id="front" placeholder=0 min=0 max=2 value="0">
+                    <input type="number" class="form-control" id="Lsmax" placeholder=0 min=0 max=2 value="0">
                 </div>
                 <div class="form-group">
                     <label>Lz max</label>
-                    <input type="number" class="form-control" id="front" placeholder=0 min=0 max=2 value="0">
+                    <input type="number" class="form-control" id="Lzmax" placeholder=0 min=0 max=2 value="0">
+                </div>
+                <div class="form-group">
+                    <br>
+                    <button type="button" class="btn btn-success" onclick="calcSize()">Calculate</button>
                 </div>
             </form>
             </div>
@@ -87,6 +106,16 @@
         
         <div class="col-md-6">
             <img src="bike_size.png" width="100%" alt="Bike geometrics" />
+            <from class="form">
+                <div class="form-group">
+                    <label>Kleinste lichaamslengte die past en houding</label>
+                    <p><span id="outSmall">156</span> cm met houding <span id="outAngleSmall">80</span></p>
+                </div>
+                <div class="form-group">
+                    <label>Grootste lichaamslengte die past en houding</label>
+                    <p><span id="outLarge">156</span> met houding <span id="outAngleLarge">80</span></p>
+                </div>
+            </from>
         </div>
     </div>
     
@@ -103,6 +132,8 @@
         </p>
     </div>
 </div>
+    
+<script src="../../js/maat.js"></script>  
     
 </body>
 </html>
