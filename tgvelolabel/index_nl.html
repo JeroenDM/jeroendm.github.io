@@ -14,6 +14,12 @@
     h2 {
         font-size: 1.6em;
     }
+    /* give the links not ready yet a different color
+    by looking whether or not the link contains "content
+    */
+    li a:not([href*='content']) {
+        text-decoration: line-through;
+    }
 </style>
     
 <script src="../js/jquery.js"></script>
@@ -40,7 +46,7 @@
             <li class="all"><a href="ontwerpsnelheid.html">Ontwerpsnelheid</a></li>
             <li class="all"><a href="weerstand.html">Typische weerstand</a></li>
             <li class="el"><a href="tractiecapaciteit.html">Tractiecapaciteit</a></li>
-            <li class="all tool"><a href="maat.html">Maat en houding</a></li>
+            <li class="all tool"><a href="content/info/maat.html">Maat en houding</a></li>
             <li class="el"><a href="hellingsgraad.html">Hellingsgraad</a></li>
             <li class="all tool"><a href="content/bruikbaarheid/trap50trap70.html">Trap 50 - Trap 70</a></li>
         </ul>
