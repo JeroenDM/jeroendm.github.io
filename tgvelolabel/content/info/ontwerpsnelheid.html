@@ -61,6 +61,38 @@
     <div class="row">
         <div class="col-md-12">
             <h2>Eenvoudige schatting op de weg</h2>
+            <p>Installeer een snelheidmeter op de fiets die kan meten tot op +/- 1 km/u nauwkeurig. Installeer en vermogenmeter (vermogen van de mens aan de pedalen) die kan meten tot op +/- 5 W nauwkeurig. Voorbeelden zijn de pedalen van Garmin of een crank van SRAM met vermogensmeting. In de meest ideale situatie word de snelheid en het vermogen gelogged op een apparaat zodat het achteraf op de computer kan geanalyseerd worden.</p>
+            <p>Zoek een testsite met volgende eigenschappen:</p>
+            <ul>
+                <li>Een vlakke weg (geen helling groter dan +/- 0.2 %.</li>
+                <li>Het wegdek is gladde beton of asfalt zoder bulten of randjes. Géén tegels, zand, kasseien, ...</li>
+                <li>De temperatuur is tussen 14 °C en 26 °C.</li>
+                <li>De geografische ligging van de meetsite is niet meer dan 600 m boven zeeniveau.</li>
+            </ul>
+            
+            <p>De test kan dan worden uitgevoerd door een persoon met volgende eigenschappen:</p>
+            <ul>
+                <li>De persoon heeft een lichaamslengte gelijk aan het gemiddelde van het <a href="maat.html">bereik van mensen dat op de fiets past</a>, met een foutmarge van +/- 5cm. Als bijvoorbeeld mensen van 160 cm to 186 cm op de fiets passen, dan wordt deze test uitgevoerd door iemand die tussen 168 cm en 178 cm groot is.</li>
+                <li>De persoon heeft een BMI van 22 +/- 3.</li>
+                <li>De persoon heeft een beschermingspak aan met kap om de invloed van kleding te standaardiseren.</li>
+            </ul>
+            
+            <p>De test zelf wordt uitgevoerg met de fiets in maximale assistentie. Rijdt twee minuten rechtdoor met een trapvermogen van 100 W. Rijdt daarna twee minuten in de tegenovergestelde richting met een trapvermogen van 100 W. De constante snelheid die wordt gehaald is de ontwerpsnelheid in die richten. Het gemiddelde van de twee snelheiden is dan de ontwerpsnelheid van de fiets.</p>
+            
+            <h2>Berekening op basis van vermogensmeting</h2>
+            <p>Voor de berekening zijn verschillende gegevens nodig uit voorafgaande metingen:</p>
+            <ul>
+                <li>Motorvermogen aan het wiel in functie van de snelheid Pm(v).</li>
+                <li>Rolweerstandscoëfficient Cr.</li>
+                <li>Product van luchtweerstandscoëfficient en frontale oppervlak CdA.</li>
+                <li>Gewicht van de fiets.</li>
+            </ul>
+            <p>Het theoretisch benodigde voormogen kan in functie van de snelheid berekend worden.</p>
+            <p>Pw(v) = (M * g * Cr + 0.5 * rho * CdA * v^2) * v</p>
+            <p>Dit is op een vlakke weg zonder wind. Met de gravitatieconstante g = 9.81 m/s^2, luchtdichtheid rho = 1.225 kg/m^3 en M het totale gewicht van fiets met volle belanding en rijder. Bij de functie van motorvermogen aan het wiel word 100 W toegevoegd. (verwaarlozen kettingverliezen?) De grootste snelheid waarvoor Pm(v) + 100 = Pw(v) is de ontwerpsnelheid.</p>
+            
+            <h2>Meting op basis van simulatie in labo</h2>
+            <p>De formule voor het weerstandsvermogen in functie van de snelheid uit de vorige sectie kan gebruikt worden om een normale rit rechtdoor te simuleren op een testbank. Wanneer men dan op een testbank 100 W aan de pedalen aanlegt, de fiets in hoogste assistentie en de weerstand aan het wiel in functie van de snelheid op basis van de formule, dan kan men heel snel te ontwerpsnelheid bepalen.</p>
         </div>
     </div>
 </div>
