@@ -6,6 +6,15 @@ function calcSize() {
     document.getElementById("maxLengte").innerHTML = Math.round(Lzmax / 48 / 1.1 * 10000) / 100 + " m";
     document.getElementById("minLengte").innerHTML = Math.round(Lzmin / 45 / 1.1 * 10000) / 100 + " m";
     document.getElementById("minminLengte").innerHTML = Math.round(Lzmin / 48 / 1.1 * 10000) / 100 + " m";
+    
+    var h1 = 50;
+    var h2 = 150;
+    var h3 = 120;
+    var h4 = 50;
+    d3.select(".arrow1").attr("transform", "translate(" + h1 + ",0)");
+    d3.select(".arrow1").attr("transform", "translate(" + h2 + ",0)");
+    d3.select(".arrow1").attr("transform", "translate(" + h3 + ",0)");
+    d3.select(".arrow4").attr("transform", "translate(" + h4 + ",0)");
 }
 
 /*
