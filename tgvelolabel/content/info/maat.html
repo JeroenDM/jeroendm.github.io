@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Template</title>
+<title>Maatsysteem</title>
 
 <link rel="stylesheet"  type="text/css"  href="../../css/bootstrap.css">
 <link rel="stylesheet" type="text/css" href="../../css/site_specific.css">
@@ -25,6 +25,10 @@
     polygon.arrow {
         stroke: black;
         fill: black;
+    }
+    
+    svg {
+        display: block;
     }
     
     div.stretch {
@@ -145,7 +149,7 @@
             <br />
             
             <!-- svg drawing containing the body length schematic -->
-            <div class="col-md-6">
+            <div class="col-md-12">
             <svg width="100%" height="200px">
                 <rect width=50 height=30 x=110 y=0 fill="lightgrey" />
                 <text x=100 y=20 text-anchor="end">Fiets te klein</text>
@@ -171,18 +175,18 @@
                 <text x=210 y=150 id="minLengte">0 cm</text>
                 <text x=210 y=170 id="minminLengte">0 cm</text>
             </svg>
-            </div>
-            <div class="col-md-6">
-                <svg width=208 height=10>
-                    <polygon class="arrow1" points="0,0 10,10 20,0" fill="green"/>
-                    <polygon class="arrow2" points="0,0 10,10 20,0" fill="orange"/>
-                </svg>
-                <div class="stretch">70 | 75 | 80 | 85 | 90 <span class="stretch"></span></div>
-                <img id="houding" src="houding.png" alt="houding" width=208 height=76 />
-                <svg width=208 height=10>
-                    <polygon class="arrow3" points="0,10 10,0 20,10" fill="orange"/>
-                    <polygon class="arrow4" points="0,10 10,0 20,10" fill="green"/>
-                </svg>
+            <br/>
+                
+            <svg width=208 height=10>
+                <polygon class="arrow1" points="0,0 10,10 20,0" fill="green"/>
+                <polygon class="arrow2" points="0,0 10,10 20,0" fill="orange"/>
+            </svg>
+            <div class="stretch">70 | 75 | 80 | 85 | 90 <span class="stretch"></span></div>
+            <img id="houding" src="houding.png" alt="houding" width=208 height=76 />
+            <svg width=208 height=10>
+                <polygon class="arrow3" points="0,10 10,0 20,10" fill="orange"/>
+                <polygon class="arrow4" points="0,10 10,0 20,10" fill="green"/>
+            </svg>
             </div>
         </div>
     </div>
@@ -196,7 +200,7 @@
     <div class="container">
         <p class="muted credit">
             Contact: <a href="mailto:tgveloteam@gmail.com">tgveloteam@gmail.com</a><br>
-            Gemaakt door Dries Callebaut and Jeroen De Maeyer <br>
+            Gemaakt door Dries Callebaut en Jeroen De Maeyer <br>
             Layout gebaseerd op <a href="http://getbootstrap.com/css/" target="_blank">Bootstrap CSS</a>
         </p>
     </div>
