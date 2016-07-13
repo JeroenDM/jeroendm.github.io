@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Template</title>
+
+<link rel="stylesheet"  type="text/css"  href="../../css/bootstrap.css">
+<link rel="stylesheet" type="text/css" href="../../css/site_specific.css">
+
+<link rel="stylesheet" href="../../css/jqmath-0.4.3.css">
+
+</head>
+    
+<body>
+<div class="container">
+    
+    <div class="row">
+        <div class="col-md-12">
+        <a href="../../index_nl.html">
+            <button class="btn btn-primary">
+                <span class="glyphicon glyphicon-home" aria-hidden="true"></span> Home
+            </button>
+        </a>
+        </div>
+    </div>
+    
+    <div class="row">
+        <div class="col-md-12">
+            <h1>Zichtbaarheid</h1>
+            <h1 class="subtitle">Hoe goed zijn de lichten van de fiets zichtbaar?</h1>
+
+            <p class="intro">De kwaliteitsparameter 'zichtbaarheid' duidt aan hoe goed de lichten zichtbaar zijn voor en naast de fiets. Daarnaast wordt ook bekeken hoe zeker de fietser is dat zijn fiets brandt en blijft branden.</p>
+        </div>
+        <div class="col-md-6">
+            <h2>Definitie</h2>
+
+            <p>Deze score is een vergelijking met het maximaal haalbare.Een hoge score betekent:</p>
+            <ul>
+                <li>De lichten zijn ter hoogte ervan goed zichtbaar rechtdoor, in een hoek van 45°, in een hoek van 90°, 45° schuin achter en achter de fiets.</li>
+                <li>De lichten zijn nog steeds goed zichtbaar een uur nadat er een signaal 'battery low' gegeven is. (Voor fietsen met naafdynamo is dit een non-issue)</li>
+                <li>De lichten worden normaal niet bedekt door fietstassen, lange jassen of andere voorwerpen die men op een fiets kan verwachten.</li>
+                <li>De lichtbron is LED of een andere technologie waarvan verwacht kan worden dat het 10 jaar meegaat in de typische omstandigheden</li>
+                <li>De lichtbron verblindt de tegenligger niet</li>
+                <li>De fietser kan controleren of het licht al dan niet brandt</li>
+            </ul>
+        </div>
+        
+        <div class="col-md-12">
+            <h2>In de praktijk</h2>
+            <p>Bij het testen van lichten vielen er enkele zaken op:</p>
+            <ul> 
+                <li>Lichten die werken op naafdynamo's geven blijkbaar vaak meer licht dan lichten die werken op batterijen.</li>
+                <li>Het is niet omdat een licht veel licht geeft naar voor (of naar achter) dat het op de zijkant ook goed zichtbaar is.</li>
+                <li>Als de batterij van een elektrische fiets leeg is blijkt er vaak nog voldoende energie over te zijn om lichten te voeden. Maar de spanning mag dan niet afgesloten worden natuurlijk.</li>
+                <li>Veel lichten die op batterijtjes werken hebben de neiging om ongemerkt intensiteit te verliezen, tot op een punt dat ze schijnbaar nog wel licht geven, maar eigenlijk niet meer voldoende om op te vallen.</li>
+                <li>Sommige lichten hebben een kleine groene led die aangeeft dat de batterij te zwak wordt. Dit is vaak niet opvallend, een betere manier is om het licht vanaf dat moment te laten flitsen.</li>
+            </ul>
+        </div>
+   
+        
+    <div class="col-md-6">
+        <h2>Meten</h2>
+            <p>De score is enerzijds gebaseerd op observatie, anderzijds op lichtmetingen die uitgevoerd worden in een duistere omgeving.</p>
+            <form class="form-inline">
+                <div class="col-md-4">
+                    <div class="input-group">
+                        <input id="zicht1" name="zicht1" class="form-control" placeholder="max Cd 0°" type="text">
+                        <div class="input-group-btn">
+                            <select id="zicht1a" name="zicht1a" class="form-ingroup"><option value="1">Kan niet bedekt worden</option>
+                            <option value="0">Kan bedekt worden</option>
+                            </select>
+                        </div>
+                    </div>
+
+                </div>
+            </form>
+        </div>
+    </div>
+     
+</div>
+
+<!-- End credits at the bottom of the page, contact information and names -->
+<div id="footer">
+    <div class="container">
+        <p class="muted credit">
+            Contact: <a href="mailto:tgveloteam@gmail.com">tgveloteam@gmail.com</a><br>
+            Gemaakt door Dries Callebaut en Jeroen De Maeyer <br>
+            Layout gebaseerd op <a href="http://getbootstrap.com/css/" target="_blank">Bootstrap CSS</a>
+        </p>
+    </div>
+</div>
+
+<!-- dependencies for d3 -->
+<script src="../../js/d3.min.js"></script>
+<!-- custom javascript -->
+<script src="../../js/jquery-1.4.3.min.js"></script>
+<script src="../../js/jqmath-etc-0.4.4.min.js" charset="utf-8"></script>
+<script src="../../js/trap_modules.js"></script>
+<script src="../../js/trap_main.js"></script>    
+
+</body>
+</html>
