@@ -24,6 +24,26 @@ var sizeModule = (function () {
         dat.Lsmax = parseFloat( document.getElementById("Lsmax").value );
     }
     
+    function _rughoek(l1, Ls, Hz, Hs) {
+        // verhoudingen uit ergonomische tabellen
+        // l1 = lichaamslengte
+        var l35 = 0.26 * l1; // romplengte
+        var l34 = 0.095 * l1; // kruis tot heup afstand
+        var l17 = 0.42 * l1; // schouder tot posl afstand
+        
+        // tussenberekening
+        var Hsz = Hs - Hz - l34;
+        var ld = Math.sqrt(Ls*Ls + Hsz*Hsz);
+        
+        // hoek tussen hulplijn ld en horizon
+        var a = Math.asin( Hsz / ld );
+        // hoek tussen hulplijn ld en rug
+        var b = Math.acos( (l35*l35 + ld*ld - l17*l17) / (2*l35*ld) );
+        
+        // hoek tussen rug en horizon in graden
+        return (a+b) * 180 / Math.PI;
+    }
+    
     function calcSize() {
         var Lzmax = parseFloat( document.getElementById("Lzmax").value );
         var Lzmin = parseFloat( document.getElementById("Lzmin").value );
@@ -50,42 +70,30 @@ var sizeModule = (function () {
         //------------------------------------------------------------------
         _parseValues();
         
-        // zadel laag
-        //------------------------------------------------------------------
         var lmin = (len.min + len.minmin) / 2;
-        var Hsz = dat.Hs - dat.Hzmin - 0.095*lmin;
-        var ld = Math.sqrt(dat.Lsmin * dat.Lsmin + Hsz * Hsz);
+        var lmax = (len.max + len.maxmax) / 2; 
         
-        var a = Math.asin( Hsz / ld );
+        var gammaL = _rughoek(lmin, dat.Lsmin, dat.Hzmin, dat.Hs);
+        var gammaH = _rughoek(lmax, dat.Lsmax, dat.Hzmax, dat.Hs);
         
-        var b = Math.acos( ((0.26 * lmin)*(0.26 * lmin) + ld*ld - (0.42*lmin)*(0.42*lmin)) / (2*0.26*lmin*ld) );
-        
-        var gammaL = (a+b) * 180 / Math.PI;
         console.log("gamma laag: " + gammaL);
-        if (gammaL > 90) {gammaL = 90};
-        
-        d3.select(".arrow1").attr("transform", "translate(" + hscale(gammaL) + ",0)");
-        
-        // zadel hoog
-        //------------------------------------------------------------------
-        var lmax = (len.max + len.maxmax) / 2;
-        var Hsz = dat.Hs - dat.Hzmax - 0.095*lmax;
-        var ld = Math.sqrt(dat.Lsmax * dat.Lsmax + Hsz * Hsz);
-        
-        var a = Math.asin( Hsz / ld );
-        
-        var b = Math.acos( ((0.26 * lmax)*(0.26 * lmax) + ld*ld - (0.42*lmax)*(0.42*lmax)) / (2*0.26*lmax*ld) );
-        
-        var gammaH = (a+b) * 180 / Math.PI;
         console.log("gamma hoog: " + gammaH);
+        
+        if (gammaL > 90) {gammaL = 90};
         if (gammaH > 90) {gammaH = 90};
         
+        d3.select(".arrow1").attr("transform", "translate(" + hscale(gammaL) + ",0)");
         d3.select(".arrow2").attr("transform", "translate(" + hscale(gammaH) + ",0)");
+    }
+    
+    function calcPost2() {
+        alert("jeeep");
     }
     
     return {
         calcSize: calcSize,
         calcPost: calcPost,
+        calcPost2: calcPost2,
         dat: dat,
         len: len
     };
