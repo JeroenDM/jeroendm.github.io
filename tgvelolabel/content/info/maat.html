@@ -66,8 +66,8 @@
     <div class="row">
         <div class="col-md-12">
             
-        <h1>Template title</h1>
-        <h1 class="subtitle">If needed, subtitle</h1>
+        <h1>TGVelo maatsysteem</h1>
+        <h1 class="subtitle">Wie past er op een fiets?</h1>
             
         <p class="intro">Bij dagelijks gebruik is een comfortabele houding op de fiets belangrijk. Enkel op basis van de framemaat is het moeilijk om te beslissen of een fiets past. Het TGVelo label introduceerd twee essentiele aspecten voor een passende fiets. Het bereik van lichaamslengte dat op de fiets past en de houding die je met die lengte kunt aannemen op de fiets.</p>
         </div>
@@ -93,11 +93,11 @@
             <form class="form form-inline">
                 <div class="form-group">
                     <label>Lz laag</label>
-                    <input type="number" class="form-control" id="Lzmin" placeholder=0 min=0 max=200 value="0">
+                    <input type="number" class="form-control" id="Lzmin" placeholder=0 min=0 max=200 value="0.8">
                 </div>
                 <div class="form-group">
                     <label>Lz hoog</label>
-                    <input type="number" class="form-control" id="Lzmax" placeholder=0 min=0 max=200 value="0">
+                    <input type="number" class="form-control" id="Lzmax" placeholder=0 min=0 max=200 value="1">
                 </div>
                 <div class="form-group">
                     <button type="button" class="btn btn-success" onclick="sizeModule.calcSize()">Calculate</button>
@@ -151,7 +151,7 @@
             <form class="form form-inline">
                 <div class="form-group">
                     <label>Hs</label>
-                    <input type="number" class="form-control" id="Hs" placeholder=0 value="0">
+                    <input type="number" class="form-control" id="Hs" placeholder=1.2 value="1.2">
                 </div>
             </form>
     
@@ -160,11 +160,11 @@
                 <form class="form">
                     <div class="form-group">
                         <label>Hz min</label>
-                        <input type="number" class="form-control" id="Hzmin" placeholder=0 min=0 max=200 value="0">
+                        <input type="number" class="form-control" id="Hzmin" placeholder=1 min=0 max=200 value="1">
                     </div>
                     <div class="form-group">
                         <label>Ls min</label>
-                        <input type="number" class="form-control" id="Lsmin" placeholder=0 min=0 max=200 value="0">
+                        <input type="number" class="form-control" id="Lsmin" placeholder=0.5 min=0 max=200 value="0.5">
                     </div>
                 </form>
             </div>
@@ -191,13 +191,13 @@
             <div>                
                 <svg width=208 height=10>
                     <polygon class="arrow1" points="0,0 10,10 20,0" fill="green"/>
-                    <polygon class="arrow2" points="0,0 10,10 20,0" fill="orange"/>
+                    <polygon class="arrow2" points="0,0 10,10 20,0" fill="green"/>
                 </svg>
-                <div class="stretch">70 | 75 | 80 | 85 | 90 <span class="stretch"></span></div>
+                <div class="stretch">90 | 80 | 70 | 60 | 50 <span class="stretch"></span></div>
                 <img id="houding" src="houding.png" alt="houding" width=208 height=76 />
                 <svg width=208 height=10>
-                    <polygon class="arrow3" points="0,10 10,0 20,10" fill="orange"/>
-                    <polygon class="arrow4" points="0,10 10,0 20,10" fill="green"/>
+                    <!--<polygon class="arrow3" points="0,10 10,0 20,10" fill="orange"/>-->
+                    <!--<polygon class="arrow4" points="0,10 10,0 20,10" fill="green"/>-->
                 </svg>
             </div>
 
