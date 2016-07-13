@@ -13,7 +13,15 @@ var sizeModule = (function () {
         Hzmin: 0,
         Hzmax: 0,
         Lsmin: 0,
-        Lsmax: 0
+        Lsmax: 0,
+        Hzmin2: 0,
+        Hzmax2: 0,
+        Hsmin2: 0,
+        Hsmax2: 0,
+        Lsdl: 0,
+        Lsdh: 0,
+        Lsvl: 0,
+        Lsvh: 0
     };
     
     function _parseValues() {
@@ -22,6 +30,18 @@ var sizeModule = (function () {
         dat.Hzmax = parseFloat( document.getElementById("Hzmax").value );
         dat.Lsmin = parseFloat( document.getElementById("Lsmin").value );
         dat.Lsmax = parseFloat( document.getElementById("Lsmax").value );
+    }
+    
+    function _parseValues2() {
+        dat.Hzmin2 = parseFloat( document.getElementById("Hzmin2").value );
+        dat.Hzmax2 = parseFloat( document.getElementById("Hzmax2").value );
+        dat.Hsmin2 = parseFloat( document.getElementById("Hsmin2").value );
+        dat.Hsmax2 = parseFloat( document.getElementById("Hsmax2").value );
+        
+        dat.Lsdl = parseFloat( document.getElementById("Lsdl").value );
+        dat.Lsdh = parseFloat( document.getElementById("Lsdh").value );
+        dat.Lsvl = parseFloat( document.getElementById("Lsvl").value );
+        dat.Lsvh = parseFloat( document.getElementById("Lsvh").value );
     }
     
     function _rughoek(l1, Ls, Hz, Hs) {
@@ -87,7 +107,30 @@ var sizeModule = (function () {
     }
     
     function calcPost2() {
-        alert("jeeep");
+        _parseValues2();
+        
+        var lmin = (len.min + len.minmin) / 2;
+        var lmax = (len.max + len.maxmax) / 2;
+        
+        var gamma1 = _rughoek(lmin, dat.Lsdl, dat.Hzmin2, dat.Hsmin2);
+        var gamma2 = _rughoek(lmax, dat.Lsdh, dat.Hzmax2, dat.Hsmin2);
+        var gamma3 = _rughoek(lmin, dat.Lsvl, dat.Hzmin2, dat.Hsmax2);
+        var gamma4 = _rughoek(lmax, dat.Lsvh, dat.Hzmax2, dat.Hsmax2);
+        
+        console.log("gamma 1: " + gamma1);
+        console.log("gamma 2: " + gamma2);
+        console.log("gamma 3: " + gamma3);
+        console.log("gamma 4: " + gamma4);
+        
+        if (gamma1 > 90) {gamma1 = 90};
+        if (gamma2 > 90) {gamma2 = 90};
+        if (gamma3 > 90) {gamma3 = 90};
+        if (gamma4 > 90) {gamma4 = 90};
+        
+        d3.select(".arrow12").attr("transform", "translate(" + hscale(gamma1) + ",0)");
+        d3.select(".arrow22").attr("transform", "translate(" + hscale(gamma2) + ",0)");
+        d3.select(".arrow32").attr("transform", "translate(" + hscale(gamma3) + ",0)");
+        d3.select(".arrow42").attr("transform", "translate(" + hscale(gamma4) + ",0)");
     }
     
     return {
