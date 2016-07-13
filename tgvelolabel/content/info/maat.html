@@ -85,109 +85,122 @@
     </div>
     
     <div class="row">
-        <div class="col-md-6">
-            <h2>Bicycle geometrical parameters</h2>
-            <p><b>Hz</b> Zadelhoogte, de kortst mogelijke afstand tussen het oppervlak van het zadel en de grond.</p>
-            <p><b>Hs</b> Stuurhoogte, de kortst mogelijke afstand tussen de verbinding van de centra van de handvatten tot de grond.</p>
-            <p><b>Ls</b> Stuurlengte of zitlengte, de afstand tussen de verbinding van de centra van de handvatten tot het snijpunt van zadeloppervlak en hartlijn van de zadelbuis, evenwijdig met de grond gemeten.</p>
-            <p><b>Lz</b> Zadellengte, de grootst mogelijke afstand tussen het snijpunt van zadeloppervlak en hartlijn van de zadelbuis tot het oppervlak van de pedaal.
+        <div class="col-md-12">
+            <h2>Stap 1</h2>
+            <p>In deze stap meten we de zadellengte om de bepalen welke mensen er op de fiets passen. Voer de meting uit voor zadel in hoogste en laagste stand met volgende definitie:</p>
+            <p><b>Lz =</b> Zadellengte, de grootst mogelijke afstand tussen het snijpunt van zadeloppervlak en hartlijn van de zadelbuis tot het oppervlak van de pedaal.
 </p>
-            <p><b>α</b> Zadelbuishoek ten opzichte van de grond.</p>
-            <div class="col-md-6">
-            <form class="form">
+            <form class="form form-inline">
                 <div class="form-group">
-                    <label>Hz min</label>
-                    <input type="number" class="form-control" id="Hzmin" placeholder=0 min=0 max=200 value="0">
-                </div>
-                <div class="form-group">
-                    <label>Hs min</label>
-                    <input type="number" class="form-control" id="Hsmin" placeholder=0 min=0 max=200 value="0">
-                </div>
-                <div class="form-group">
-                    <label>Ls min</label>
-                    <input type="number" class="form-control" id="Lsmin" placeholder=0 min=0 max=200 value="0">
-                </div>
-                <div class="form-group">
-                    <label>Lz min</label>
+                    <label>Lz laag</label>
                     <input type="number" class="form-control" id="Lzmin" placeholder=0 min=0 max=200 value="0">
                 </div>
                 <div class="form-group">
-                    <label>hoek α</label>
-                    <input type="number" class="form-control" id="alpha" placeholder=0 min=0 max=110 value="0">
+                    <label>Lz hoog</label>
+                    <input type="number" class="form-control" id="Lzmax" placeholder=0 min=0 max=200 value="0">
+                </div>
+                <div class="form-group">
+                    <button type="button" class="btn btn-success" onclick="sizeModule.calcSize()">Calculate</button>
                 </div>
             </form>
-            </div>
-            <div class="col-md-6">
-            <form class="form">
-                <div class="form-group">
-                    <label>Hz max</label>
-                    <input type="number" class="form-control" id="Hzmax" placeholder=0 min=0 max=200 value="0">
-                </div>
-                <div class="form-group">
-                    <label>Hs max</label>
-                    <input type="number" class="form-control" id="Hsmax" placeholder=0 min=0 max=200 value="0">
-                </div>
-                <div class="form-group">
-                    <label>Ls max</label>
-                    <input type="number" class="form-control" id="Lsmax" placeholder=0 min=0 max=200 value="0">
-                </div>
-                <div class="form-group">
-                    <label>Lz max</label>
-                    <input type="number" class="form-control" id="Lzmax" placeholder=0 min=0 max=2 value="0">
-                </div>
-                <div class="form-group">
-                    <br>
-                    <button type="button" class="btn btn-success" onclick="calcSize()">Calculate</button>
-                </div>
-            </form>
-            </div>
-        </div>
-        
-        
-        <div class="col-md-6">
-            <img src="bike_size.png" width="100%" alt="Bike geometrics" />
-            <br />
             
-            <!-- svg drawing containing the body length schematic -->
-            <div class="col-md-12">
-            <svg width="100%" height="200px">
-                <rect width=50 height=30 x=110 y=0 fill="lightgrey" />
-                <text x=100 y=20 text-anchor="end">Fiets te klein</text>
-                
-                <rect width=50 height=20 x=110 y=30 fill="orange" />
-                <text x=100 y=40 text-anchor="end">Past misschien</text>
-                
-                <rect width=50 height=100 x=110 y=50 fill="green" />
-                
-                <rect width=50 height=20 x=110 y=150 fill="orange" />
-                <text x=100 y=160 text-anchor="end">Past misschien</text>
-                
-                <rect width=50 height=30 x=110 y=170 fill="lightgrey" />
-                <text x=100 y=190 text-anchor="end">Fiets te groot</text>
-                
-                <line x1=110 y1=30 x2=200 y2=30 />
-                <line x1=110 y1=50 x2=200 y2=50 />
-                <line x1=110 y1=150 x2=200 y2=150 />
-                <line x1=110 y1=170 x2=200 y2=170 />
-                
-                <text x=210 y=30 id="maxmaxLengte">0 cm</text>
-                <text x=210 y=50 id="maxLengte">0 cm</text>
-                <text x=210 y=150 id="minLengte">0 cm</text>
-                <text x=210 y=170 id="minminLengte">0 cm</text>
-            </svg>
             <br/>
-                
-            <svg width=208 height=10>
-                <polygon class="arrow1" points="0,0 10,10 20,0" fill="green"/>
-                <polygon class="arrow2" points="0,0 10,10 20,0" fill="orange"/>
-            </svg>
-            <div class="stretch">70 | 75 | 80 | 85 | 90 <span class="stretch"></span></div>
-            <img id="houding" src="houding.png" alt="houding" width=208 height=76 />
-            <svg width=208 height=10>
-                <polygon class="arrow3" points="0,10 10,0 20,10" fill="orange"/>
-                <polygon class="arrow4" points="0,10 10,0 20,10" fill="green"/>
-            </svg>
+            <div class="row">
+                <div class="col-md-6">
+                <!-- svg drawing containing the body length schematic -->
+                <svg width="100%" height="200px">
+                    <rect width=50 height=30 x=110 y=0 fill="lightgrey" />
+                    <text x=100 y=20 text-anchor="end">Fiets te klein</text>
+
+                    <rect width=50 height=20 x=110 y=30 fill="orange" />
+                    <text x=100 y=40 text-anchor="end">Past misschien</text>
+
+                    <rect width=50 height=100 x=110 y=50 fill="green" />
+
+                    <rect width=50 height=20 x=110 y=150 fill="orange" />
+                    <text x=100 y=160 text-anchor="end">Past misschien</text>
+
+                    <rect width=50 height=30 x=110 y=170 fill="lightgrey" />
+                    <text x=100 y=190 text-anchor="end">Fiets te groot</text>
+
+                    <line x1=110 y1=30 x2=200 y2=30 />
+                    <line x1=110 y1=50 x2=200 y2=50 />
+                    <line x1=110 y1=150 x2=200 y2=150 />
+                    <line x1=110 y1=170 x2=200 y2=170 />
+
+                    <text x=210 y=30 id="maxmaxLengte">0 cm</text>
+                    <text x=210 y=50 id="maxLengte">0 cm</text>
+                    <text x=210 y=150 id="minLengte">0 cm</text>
+                    <text x=210 y=170 id="minminLengte">0 cm</text>
+                </svg>
+                </div>
+                <div class="col-md-6">
+                    <img src="bike_size.png" width="100%" alt="Bike geometrics" />
+                </div>
             </div>
+            
+            <h2>Stap 2 (stuur niet instelbaar)</h2>
+            
+            <p>Als het stuur niet instelbaar is moeten de metingen voor de houding enkel voor lage en hoge zadelpositie gemeten worden. Volgende parameters worden opgemeten voor lage en hoge </p>
+            
+            <p><b>Hz</b> Zadelhoogte, de kortst mogelijke afstand tussen het oppervlak van het zadel en de grond.</p>
+            <p><b>Hs</b> Stuurhoogte, de kortst mogelijke afstand tussen de verbinding van de centra van de handvatten tot de grond.</p>
+            <p><b>Ls</b> Stuurlengte of zitlengte, de afstand tussen de verbinding van de centra van de handvatten tot het snijpunt van zadeloppervlak en hartlijn van de zadelbuis, evenwijdig met de grond gemeten.</p>
+            
+            <h4>Stuurhoogte</h4>
+            <form class="form form-inline">
+                <div class="form-group">
+                    <label>Hs</label>
+                    <input type="number" class="form-control" id="Hs" placeholder=0 value="0">
+                </div>
+            </form>
+    
+            <div class="col-md-6">
+                <h4>Zadel in laagste positie</h4>
+                <form class="form">
+                    <div class="form-group">
+                        <label>Hz min</label>
+                        <input type="number" class="form-control" id="Hzmin" placeholder=0 min=0 max=200 value="0">
+                    </div>
+                    <div class="form-group">
+                        <label>Ls min</label>
+                        <input type="number" class="form-control" id="Lsmin" placeholder=0 min=0 max=200 value="0">
+                    </div>
+                </form>
+            </div>
+ 
+            <div class="col-md-6">
+                <h4>Zadel in hoogste positie</h4>
+                <form class="form">
+                    <div class="form-group">
+                        <label>Hz max</label>
+                        <input type="number" class="form-control" id="Hzmax" placeholder=0 min=0 max=200 value="0">
+                    </div>
+                    <div class="form-group">
+                        <label>Ls max</label>
+                        <input type="number" class="form-control" id="Lsmax" placeholder=0 min=0 max=200 value="0">
+                    </div>
+                    <div class="form-group">
+                        <br>
+                        <button type="button" class="btn btn-success" onclick="sizeModule.calcPost()">Calculate</button>
+                    </div>
+                </form>
+            </div>
+            
+            <br/>
+            <div>                
+                <svg width=208 height=10>
+                    <polygon class="arrow1" points="0,0 10,10 20,0" fill="green"/>
+                    <polygon class="arrow2" points="0,0 10,10 20,0" fill="orange"/>
+                </svg>
+                <div class="stretch">70 | 75 | 80 | 85 | 90 <span class="stretch"></span></div>
+                <img id="houding" src="houding.png" alt="houding" width=208 height=76 />
+                <svg width=208 height=10>
+                    <polygon class="arrow3" points="0,10 10,0 20,10" fill="orange"/>
+                    <polygon class="arrow4" points="0,10 10,0 20,10" fill="green"/>
+                </svg>
+            </div>
+
         </div>
     </div>
     </div>
