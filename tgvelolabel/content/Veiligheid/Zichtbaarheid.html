@@ -61,19 +61,30 @@
         
     <div class="col-md-6">
         <h2>Meten</h2>
-            <p>De score is enerzijds gebaseerd op observatie, anderzijds op lichtmetingen die uitgevoerd worden in een duistere omgeving.</p>
+            <p>De score is enerzijds gebaseerd op observatie, anderzijds op lichtmetingen.<br>
+            De maximale sterkte van de lichten wordt telkens gemeten loodrecht voor het licht, op 45° en op 90° in het horizontale vlak, zoals een naderende auto de lichten zou kunnen zien. Als de lichten instelbaar zijn mag gemeten worden op de ideale hoogte.<br>
+            Op onderstaande manieren wordt gekeken of de lichten kunnen afgeschermd worden:
+                <ul>
+                    <li>een stuk stof van 40 cm lang wordt aan het zadel gehouden.</li>
+                    <li>een dubbele fietstas van 40 cm x 40 cm wordt op de bagagedrager gehangen.</li>
+                    <li>een pak van 40cm hoog wordt op de bagagedragers gehouden.</li>
+                    <li>een stuk stof van 40cm lang wordt onder het stuur gehouden </li>
+                </ul>
+            </p>
+    </div>
+   
+        
+    <div class="col-md-6">
+        <h2>Berekenen</h2>
+            <p>Het TGVeloteam gebruikt een eenvoudige lichtmeter die uitgerust is met een mat-zwarte koker van 30cm lang. De metingen worden uitgevoerd worden in een omgeving met maximum 500 lux.<br>
+            In onderstaande tool worden de waarden in lux eerst omgerekend naar Cd. Daarna worden de gemeten waarden vergeleken met een lichtsterkte van 2Cd, die voldoende blijkt voor de zichtbaarheid van lichten in stadsverkeer. De tool middelt de scores per meting uit en verrekent opmerkingen die gemaakt kunnen worden via de dropdown menus.</p>
             <form class="form-inline">
-                <div class="col-md-4">
-                    <div class="input-group">
-                        <input id="zicht1" name="zicht1" class="form-control" placeholder="max Cd 0°" type="text">
-                        <div class="input-group-btn">
-                            <select id="zicht1a" name="zicht1a" class="form-ingroup"><option value="1">Kan niet bedekt worden</option>
-                            <option value="0">Kan bedekt worden</option>
-                            </select>
-                        </div>
-                    </div>
-
-                </div>
+                <input id="zicht1" name="zicht1" class="form-control" placeholder="max Cd 0°" type="text">
+                <select id="zicht1a" name="zicht1a"  class="form-control">
+                    <option value="0">Wordt waarschijnlijk niet bedekt</option>
+                    <option value="1">Kan bedekt worden</option>
+                    <option value="2">Is standaard verborgen in deze richting</option>
+                </select>
             </form>
         </div>
     </div>
