@@ -220,6 +220,9 @@
                     <input name="strafpunten" value="1" type="checkbox"> Het achterlicht kan kantelen als er druk wordt uitgeoefend
                 </label>
             </div>
+        
+            <button type="button" class="btn btn-success" onclick="calcScore(); return false;">Update score</button>
+        <p>De totale score op zichtbaarheid is <b><span id="score">0</span> %</b></p>
         </div>
     </div>
      
@@ -237,12 +240,51 @@
 </div>
 
 <!-- dependencies for d3 -->
-<script src="../../js/d3.min.js"></script>
+<!--<script src="../../js/d3.min.js"></script>-->
 <!-- custom javascript -->
-<script src="../../js/jquery-1.4.3.min.js"></script>
-<script src="../../js/jqmath-etc-0.4.4.min.js" charset="utf-8"></script>
-<script src="../../js/trap_modules.js"></script>
-<script src="../../js/trap_main.js"></script>    
+<script>
+    //lux naar candela => lux * 0.297^2 = candela (0.297 = lengte van A4)
+    // candela naar score => als afdekking volledig: *0, misschien afgedekt *0.5 niet afgedekt *1
+    // gemiddelde van al de aangepaste candelas, MAAR maximaal 2 in rekening brengen voor een punt
+    // strafpunten in score => strafptn optellen / max strafpunten * gemiddelde candele waarde
+    var $lux = document.getElementsByName("lux");
+    var $bedekt = document.getElementsByName("bedekt");
+    var $strafp = document.getElementsByName("strafpunten");
+    
+    var meanCandela = 0;
+    
+    function calcScore() {
+        var l;
+        for(l=0; l<$lux.length; ++l) {
+            // lux to candela
+            var candela = parseFloat( $lux[l].value ) * 0.297 * 0.297;
+            // correctie als afgedekt
+            candela *= (2 - parseFloat( $bedekt[l].value )) / 2;
+            // max 2 candela in rekening brengen
+            if (candela > 2) { candela = 2; };
+            // gemiddelde updaten
+            meanCandela += candela;
+        }
+        // candela som => gemiddelde
+        meanCandela /= $lux.length;
+
+        console.log(meanCandela);
+        
+        var somStrafp = 0;
+        var MAXSTRAFP = 8;
+        
+        var i;
+        for(i=0; i<$strafp.length; ++i) {
+            somStrafp += $strafp[i].checked;
+        }
+        console.log(somStrafp);
+        
+        var score = Math.round( meanCandela * somStrafp / MAXSTRAFP * 50 );
+        console.log(score);
+        document.getElementById("score").innerHTML = score;
+    }
+</script>
+  
 
 </body>
 </html>
