@@ -114,7 +114,12 @@
                     Als de gebruiksaanwijzing er van uit gaat dat  een Smartphone aanstaat en in een jaszak zit, mag men er van uitgaan dat dit ook zo is.<br>
                 </li>
                 
-            </ol>    
+            </ol>
+            
+            <h2>Resultaat</h2>
+            <p>Score op <b>diefstalbeveiliging: <span id="diefstal">0</span> %</b> en score op aantal <b>handelingen: <span id="handelingen">0</span> %</b>.</p>
+            <p>Dit geeft een <b>totale score van <span id="totaal">0</span> %</b></p>
+            <button type="button" class="btn btn-success" onclick="calcScore(); return false;">Update score</button>
         </div>
     </div>
 
@@ -132,12 +137,36 @@
 </div>
 
 <!-- dependencies for d3 -->
-<script src="../../js/d3.min.js"></script>
+<!--<script src="../../js/d3.min.js"></script>-->
 <!-- custom javascript -->
-<script src="../../js/jquery-1.4.3.min.js"></script>
-<script src="../../js/jqmath-etc-0.4.4.min.js" charset="utf-8"></script>
-<script src="../../js/trap_modules.js"></script>
-<script src="../../js/trap_main.js"></script>    
+<script>
+    var names = ["Pauze1", "Pauze2", "Pauze3", "Pauze4", "Pauze5"];
+    
+    function calcScore() {
+        var scorePauze = 0;
+        var scoreHandelingen = 0;
+        
+        var n;
+        for(n=0; n<names.length; ++n) {
+            var $els = document.getElementsByName(names[n]);
+            
+            var i;
+            for(i=0; i<$els.length; ++i) {
+                if ($els[i].checked) {
+                    scorePauze += parseFloat( $els[i].value );
+                }
+            }
+        }
+        
+        var scoreHandelingen = parseFloat( document.getElementById("Pauze6").value );
+        
+        console.log(scorePauze);
+        console.log(scoreHandelingen);
+        document.getElementById("diefstal").innerHTML = Math.round( scorePauze * 20 );
+        document.getElementById("handelingen").innerHTML = Math.round( scoreHandelingen * 20 );
+        document.getElementById("totaal").innerHTML = Math.round( (scorePauze + scoreHandelingen) * 10 );
+    }
+</script>
 
 </body>
 </html>
