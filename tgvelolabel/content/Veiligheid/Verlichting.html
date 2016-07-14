@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Template</title>
+
+<link rel="stylesheet"  type="text/css"  href="../../css/bootstrap.css">
+<link rel="stylesheet" type="text/css" href="../../css/site_specific.css">
+
+<link rel="stylesheet" href="../../css/jqmath-0.4.3.css">
+
+</head>
+    
+<body>
+<div class="container">
+    
+    <div class="row">
+        <div class="col-md-12">
+        <a href="../../index_nl.html">
+            <button class="btn btn-primary">
+                <span class="glyphicon glyphicon-home" aria-hidden="true"></span> Home
+            </button>
+        </a>
+        </div>
+    
+        <div class="col-md-12">
+            <h1>Verlichting</h1>
+            <h1 class="subtitle">Hoe goed wordt de rijweg verlicht door de fiets?</h1>
+
+            <p class="intro">De kwaliteitsparameter 'verlichting' duidt aan hoeveel lichtstroom er door het voorlicht gegeven wordt en hoe effectief deze stroom gericht wordt op de weg.</p>
+        </div>
+        <div class="col-md-12">
+            <h2>Definitie</h2>
+
+            <p>Deze score is een vergelijking met het maximaal haalbare.Een hoge score betekent:</p>
+            <ul>
+                <li>De fiets heeft een spot die ver straalt.</li>
+                <li>De grond voor de fiets wordt goed verlicht.</li>
+                <li>Er is strooilicht naar de zijkanten.</li>
+                <li>Er is een breed oppervlak in de verte die goed verlicht wordt.</li>
+            </ul>
+        </div>
+        
+        <div class="col-md-12">
+            <h2>In de praktijk</h2>
+            <p>Bij het testen van lichten vielen er enkele zaken op:</p>
+            <ul> 
+                <li>Lichten die werken op naafdynamo's geven blijkbaar vaak meer licht dan lichten die werken op batterijen.</li>
+                <li>Het is niet omdat een licht veel licht geeft naar voor (of naar achter) dat het op de zijkant ook goed zichtbaar is.</li>
+                <li>Als de batterij van een elektrische fiets leeg is blijkt er vaak nog voldoende energie over te zijn om lichten te voeden. Maar de spanning mag dan niet afgesloten worden natuurlijk.</li>
+                <li>Veel lichten die op batterijtjes werken hebben de neiging om ongemerkt intensiteit te verliezen, tot op een punt dat ze schijnbaar nog wel licht geven, maar eigenlijk niet meer voldoende om op te vallen.</li>
+                <li>Sommige lichten hebben een kleine groene led die aangeeft dat de batterij te zwak wordt. Dit is vaak niet opvallend, een betere manier is om het licht vanaf dat moment te laten flitsen.</li>
+            </ul>
+        </div>
+   
+        
+    <div class="col-md-12">
+        <h2>Meten</h2>
+            <p>De score is enerzijds gebaseerd op observatie, anderzijds op lichtmetingen.<br>
+            De maximale sterkte van de lichten wordt telkens gemeten loodrecht voor het licht, op 45° en op 90° in het horizontale vlak, zoals een naderende auto de lichten zou kunnen zien. Als de lichten instelbaar zijn mag gemeten worden op de ideale hoogte.<br><br>
+            Op onderstaande manieren wordt gekeken of de lichten kunnen afgeschermd worden:
+            <ul>
+                <li>een stuk stof van 40 cm lang wordt aan het zadel gehouden.</li>
+                <li>een dubbele fietstas van 40 cm x 40 cm wordt op de bagagedrager gehangen.</li>
+                <li>een pak van 40cm hoog wordt op de bagagedragers gehouden.</li>
+                <li>een stuk stof van 40cm lang wordt onder het stuur gehouden </li>
+            </ul><br>
+            Er wordt bekeken of er een visuele terugkoppeling is of het voorlicht brandt of niet met de fietser zittend op het zadel: 
+            <ul>
+                <li>Zijn de lichten verborgen achter de structuur van de fiets? </li>
+                <li>Is het, in een omgeving waar ongeveer 500 Lux op het licht valt, zichtbaar of het licht brandt of niet?</li>
+            </ul>
+            </p>
+    </div>
+   
+        
+    <div class="col-md-12">
+        <h2>Berekenen</h2>
+            <p>Het TGVeloteam gebruikt een eenvoudige lichtmeter die uitgerust is met een mat-zwarte koker van 30cm lang. De metingen worden uitgevoerd worden in een omgeving met maximum 500 lux.<br>
+            In onderstaande tool worden de waarden in lux eerst omgerekend naar Cd. Daarna worden de gemeten waarden vergeleken met een lichtsterkte van 2Cd, die voldoende blijkt voor de zichtbaarheid van lichten in stadsverkeer. De tool middelt de scores per meting uit en verrekent opmerkingen die gemaakt kunnen worden via de dropdown menus.<br>
+            De eerste reeks metingen gebeuren bij nieuwe batterij, als de lichten minimum 10 minuten opgewarmd zijn. In het geval de stroombron een dynamo is, wordt aan 20 km/u gereden.</p>
+            <form class="form-inline">
+                <input id="zicht1" name="lux" class="form-control" placeholder="max lux voorlicht 0°" type="text">
+                <select id="zicht1a" name="bedekt"  class="form-control">
+                    <option value="0">Wordt waarschijnlijk niet bedekt</option>
+                    <option value="1">Kan bedekt worden</option>
+                    <option value="2">Is standaard verborgen in deze richting</option>
+                </select>
+            </form>
+            <form class="form-inline">
+                <input id="zicht2" name="lux" class="form-control" placeholder="max lux voorlicht 45°" type="text">
+                <select id="zicht2a" name="bedekt"  class="form-control">
+                    <option value="0">Wordt waarschijnlijk niet bedekt</option>
+                    <option value="1">Kan bedekt worden</option>
+                    <option value="2">Is standaard verborgen in deze richting</option>
+                </select>
+            </form>
+            <form class="form-inline">
+                <input id="zicht3" name="lux" class="form-control" placeholder="max lux voorlicht 90°" type="text">
+                <select id="zicht3a" name="bedekt"  class="form-control">
+                    <option value="0">Wordt waarschijnlijk niet bedekt</option>
+                    <option value="1">Kan bedekt worden</option>
+                    <option value="2">Is standaard verborgen in deze richting</option>
+                </select>
+            </form>
+            <form class="form-inline">
+                <input id="zicht4" name="lux" class="form-control" placeholder="max lux achterlicht 0°" type="text">
+                <select id="zicht4a" name="bedekt"  class="form-control">
+                    <option value="0">Wordt waarschijnlijk niet bedekt</option>
+                    <option value="1">Kan bedekt worden</option>
+                    <option value="2">Is standaard verborgen in deze richting</option>
+                </select>
+            </form>
+            <form class="form-inline">
+                <input id="zicht5" name="lux" class="form-control" placeholder="max lux achterlicht 45°" type="text">
+                <select id="zicht5a" name="bedekt"  class="form-control">
+                    <option value="0">Wordt waarschijnlijk niet bedekt</option>
+                    <option value="1">Kan bedekt worden</option>
+                    <option value="2">Is standaard verborgen in deze richting</option>
+                </select>
+            </form>
+            <form class="form-inline">
+                <input id="zicht6" name="lux" class="form-control" placeholder="max lux achterlicht 90°" type="text">
+                <select id="zicht6a" name="bedekt"  class="form-control">
+                    <option value="0">Wordt waarschijnlijk niet bedekt</option>
+                    <option value="1">Kan bedekt worden</option>
+                    <option value="2">Is standaard verborgen in deze richting</option>
+                </select>
+            </form> <br>
+        <p>Een tweede reeks metingen gebeurt minimum 1 uur nadat het signaal "battery low" is gegeven. Indien geen signaal gegeven is, kan men ofwel hieronder 0 voor elke meting ingeven, ofwel ervoor kiezen om elk licht een vergelijkbare tijd te laten branden. In het geval de stroombron een dynamo is, wordt aan 10 km/u gemeten. </p>
+            <form class="form-inline">
+                <input id="zicht7" name="lux" class="form-control" placeholder="max lux voorlicht 0°" type="text">
+                <select id="zicht7a" name="bedekt"  class="form-control">
+                    <option value="0">Wordt waarschijnlijk niet bedekt</option>
+                    <option value="1">Kan bedekt worden</option>
+                    <option value="2">Is standaard verborgen in deze richting</option>
+                </select>
+            </form>
+            <form class="form-inline">
+                <input id="zicht8" name="lux" class="form-control" placeholder="max lux voorlicht 45°" type="text">
+                <select id="zicht8a" name="bedekt"  class="form-control">
+                    <option value="0">Wordt waarschijnlijk niet bedekt</option>
+                    <option value="1">Kan bedekt worden</option>
+                    <option value="2">Is standaard verborgen in deze richting</option>
+                </select>
+            </form>
+            <form class="form-inline">
+                <input id="zicht9" name="lux" class="form-control" placeholder="max lux voorlicht 90°" type="text">
+                <select id="zicht9a" name="bedekt"  class="form-control">
+                    <option value="0">Wordt waarschijnlijk niet bedekt</option>
+                    <option value="1">Kan bedekt worden</option>
+                    <option value="2">Is standaard verborgen in deze richting</option>
+                </select>
+            </form>
+            <form class="form-inline">
+                <input id="zicht10" name="lux" class="form-control" placeholder="max lux achterlicht 0°" type="text">
+                <select id="zicht10a" name="bedekt"  class="form-control">
+                    <option value="0">Wordt waarschijnlijk niet bedekt</option>
+                    <option value="1">Kan bedekt worden</option>
+                    <option value="2">Is standaard verborgen in deze richting</option>
+                </select>
+            </form>
+            <form class="form-inline">
+                <input id="zicht11" name="lux" class="form-control" placeholder="max lux achterlicht 45°" type="text">
+                <select id="zicht11a" name="bedekt"  class="form-control">
+                    <option value="0">Wordt waarschijnlijk niet bedekt</option>
+                    <option value="1">Kan bedekt worden</option>
+                    <option value="2">Is standaard verborgen in deze richting</option>
+                </select>
+            </form>
+            <form class="form-inline">
+                <input id="zicht12" name="lux" class="form-control" placeholder="max lux achterlicht 90°" type="text">
+                <select id="zicht12a" name="bedekt"  class="form-control">
+                    <option value="0">Wordt waarschijnlijk niet bedekt</option>
+                    <option value="1">Kan bedekt worden</option>
+                    <option value="2">Is standaard verborgen in deze richting</option>
+                </select>
+            </form> <br>
+            <p>Tenslotte kan men hieronder nadere eingenschappen van de lichten aangeven</p>
+            <div class="checkbox">
+                <label>
+                    <input name="strafpunten" value="1" type="checkbox"> Het voorlicht heeft een andere lichtbron dan led
+                </label>
+            </div>
+            <div class="checkbox">
+                <label>
+                    <input name="strafpunten" value="1" type="checkbox"> Het achterlicht heeft een andere lichtbron dan led
+                </label>
+            </div>
+            <div class="checkbox">
+                <label>
+                    <input name="strafpunten" value="1" type="checkbox"> Het voorlicht heeft geen ISO 6742 label
+                </label>
+            </div>
+            <div class="checkbox">
+                <label>
+                    <input name="strafpunten" value="1" type="checkbox"> Het achterlicht heeft geen ISO 6742 label
+                </label>
+            </div>
+            <div class="checkbox">
+                <label>
+                    <input name="strafpunten" value="1" type="checkbox"> Er is geen visuele terugkoppeling of het voorlicht brandt of niet
+                </label>
+            </div>
+            <div class="checkbox">
+                <label>
+                    <input name="strafpunten" value="1" type="checkbox"> Er is geen visuele terugkoppeling of het achterlicht brandt of niet
+                </label>
+            </div>
+            <div class="checkbox">
+                <label>
+                    <input name="strafpunten" value="1" type="checkbox"> Het voorlicht kan kantelen als er druk wordt uitgeoefend (het is bijvoorbeeld bevestigd aan 1 bout, als die losstaat schijnt het licht naar beneden of boven)
+                </label>
+            </div>
+            <div class="checkbox">
+                <label>
+                    <input name="strafpunten" value="1" type="checkbox"> Het achterlicht kan kantelen als er druk wordt uitgeoefend
+                </label>
+            </div>
+        </div>
+    </div>
+     
+</div>
+
+<!-- End credits at the bottom of the page, contact information and names -->
+<div id="footer">
+    <div class="container">
+        <p class="muted credit">
+            Contact: <a href="mailto:tgveloteam@gmail.com">tgveloteam@gmail.com</a><br>
+            Gemaakt door Dries Callebaut en Jeroen De Maeyer <br>
+            Layout gebaseerd op <a href="http://getbootstrap.com/css/" target="_blank">Bootstrap CSS</a>
+        </p>
+    </div>
+</div>
+
+<!-- dependencies for d3 -->
+<script src="../../js/d3.min.js"></script>
+<!-- custom javascript -->
+<script src="../../js/jquery-1.4.3.min.js"></script>
+<script src="../../js/jqmath-etc-0.4.4.min.js" charset="utf-8"></script>
+<script src="../../js/trap_modules.js"></script>
+<script src="../../js/trap_main.js"></script>    
+
+</body>
+</html>
