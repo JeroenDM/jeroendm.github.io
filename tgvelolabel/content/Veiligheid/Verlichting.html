@@ -8,7 +8,16 @@
 <link rel="stylesheet"  type="text/css"  href="../../css/bootstrap.css">
 <link rel="stylesheet" type="text/css" href="../../css/site_specific.css">
 
-<link rel="stylesheet" href="../../css/jqmath-0.4.3.css">
+<style type="text/css">
+    table {
+        table-layout: fixed;
+        width: 50%;
+    }
+    td {
+        padding: 0px;
+        width: 16%; /* 100% / 6 columns */
+    }
+</style>
 
 </head>
     
@@ -56,17 +65,26 @@
     <div class="col-md-12">
         <h2>Berekenen</h2>
             <p>Vul hieronder de verkregen waarden in</p>
-            <table class="table table-bordered">
-                <th>zal het?</th>
-                <td>test</td>
-                <input type="text" name="A1" placeholder="A1">
-                <input type="text" name="A1" placeholder="A2">
-                <input type="text" name="A1">
-                <input type="text" name="A1">
-                <input type="text" name="A1">
-                <input type="text" name="A1">
-                <input type="text" name="A1">
-                <input type="text" name="A1">
+            <table>
+                <tr>
+                    <td></td>
+                    <th>midden</th>
+                    <th>+30 cm</th>
+                    <th>+60 cm</th>
+                    <th>+90 cm</th>
+                    <th>+120 cm</th>
+                    <th>+150 cm</th>
+                </tr>
+                <tr>
+                    <th>3 m x 1 m</th>
+                    <td><input type="text" name="A" placeholder="A1"></td>
+                    <td><input type="text" name="A" placeholder="A2"></td>
+                    <td><input type="text" name="A" placeholder="A3"></td>
+                    <td><input type="text" name="A" placeholder="A4"></td>
+                    <td><input type="text" name="A" placeholder="A5"></td>
+                    <td><input type="text" name="A" placeholder="A6"></td>
+                </tr>
+                
             </table>
     </div>
      
