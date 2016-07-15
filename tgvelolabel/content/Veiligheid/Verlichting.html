@@ -17,6 +17,9 @@
         padding: 0px;
         width: 16%; /* 100% / 6 columns */
     }
+    input {
+        width: 100%;
+    }
 </style>
 
 </head>
@@ -26,10 +29,8 @@
     
     <div class="row">
         <div class="col-md-12">
-        <a href="../../index_nl.html">
-            <button class="btn btn-primary">
+        <a href="../../index_nl.html" class="btn btn-primary">
                 <span class="glyphicon glyphicon-home" aria-hidden="true"></span> Home
-            </button>
         </a>
         </div>
     
@@ -84,9 +85,56 @@
                     <td><input type="text" name="A" placeholder="A5"></td>
                     <td><input type="text" name="A" placeholder="A6"></td>
                 </tr>
-                
+                <tr>
+                    <th>3 m x 0.75 m</th>
+                    <td><input type="text" name="A" placeholder="B1"></td>
+                    <td><input type="text" name="A" placeholder="B2"></td>
+                    <td><input type="text" name="A" placeholder="B3"></td>
+                    <td><input type="text" name="A" placeholder="B4"></td>
+                    <td><input type="text" name="A" placeholder="B5"></td>
+                    <td><input type="text" name="A" placeholder="B6"></td>
+                </tr>
+                <tr>
+                    <th>3 m x 0.5 m</th>
+                    <td><input type="text" name="A" placeholder="C1"></td>
+                    <td><input type="text" name="A" placeholder="C2"></td>
+                    <td><input type="text" name="A" placeholder="C3"></td>
+                    <td><input type="text" name="A" placeholder="C4"></td>
+                    <td><input type="text" name="A" placeholder="C5"></td>
+                    <td><input type="text" name="A" placeholder="C6"></td>
+                </tr>
+                <tr>
+                    <th>3 m x 0.5 m</th>
+                    <td><input type="text" name="A" placeholder="D1"></td>
+                    <td><input type="text" name="A" placeholder="D2"></td>
+                    <td><input type="text" name="A" placeholder="D3"></td>
+                    <td><input type="text" name="A" placeholder="D4"></td>
+                    <td><input type="text" name="A" placeholder="D5"></td>
+                    <td><input type="text" name="A" placeholder="D6"></td>
+                </tr>
+                <tr>
+                    <th>3 m x 0.5 m</th>
+                    <td><input type="text" name="A" placeholder="E1"></td>
+                    <td><input type="text" name="A" placeholder="E2"></td>
+                    <td><input type="text" name="A" placeholder="E3"></td>
+                    <td><input type="text" name="A" placeholder="E4"></td>
+                    <td><input type="text" name="A" placeholder="E5"></td>
+                    <td><input type="text" name="A" placeholder="E6"></td>
+                </tr>
+                <tr>
+                    <th>3 m x 0.5 m</th>
+                    <td><input type="text" name="A" placeholder="F1"></td>
+                    <td><input type="text" name="A" placeholder="F2"></td>
+                    <td><input type="text" name="A" placeholder="F3"></td>
+                    <td><input type="text" name="A" placeholder="F4"></td>
+                    <td><input type="text" name="A" placeholder="F5"></td>
+                    <td><input type="text" name="A" placeholder="F6"></td>
+                </tr>
             </table>
     </div>
+        
+    <button type="button" class="btn btn-success" onclick="calcScore(); return false;">Update score</button>
+    <p>Score is: <span id="score">0</span> eenheid</p>
      
 </div>
 
@@ -102,12 +150,46 @@
 </div>
 
 <!-- dependencies for d3 -->
-<script src="../../js/d3.min.js"></script>
+<!--<script src="../../js/d3.min.js"></script>-->
 <!-- custom javascript -->
-<script src="../../js/jquery-1.4.3.min.js"></script>
-<script src="../../js/jqmath-etc-0.4.4.min.js" charset="utf-8"></script>
-<script src="../../js/trap_modules.js"></script>
-<script src="../../js/trap_main.js"></script>    
+<script>
+    var values; // nog andere naam geven
+    function add(a, b) {
+        return a + b;
+    }
+    
+    // functies om specifieke gebieden te selecteren
+    function getZoneA(array) {
+        return array.slice(3, 6).concat( array.slice(9, 12) ).concat( array.slice(15, 18) );
+    }
+    function getZoneB(array) {
+        return array.slice(21, 24).concat( array.slice(27, 30) ).concat( array.slice(33, 36) );
+    }
+    
+    var $lux = document.getElementsByName("A");
+    var N = $lux.length;
+    
+    $lux.forEach(function(element) {
+        element.value = 0;
+    });
+    
+    function calcScore() {
+        values = [];
+        $lux.forEach(function(element) {
+            values.push(parseFloat( element.value ));
+        });
+        
+        var score = values.reduce(add);
+        var scoreA = getZoneA(values).reduce(add);
+        var scoreB = getZoneB(values).reduce(add);
+        
+        // ver stralen: 
+        
+        document.getElementById("score").innerHTML = score + " A: " + scoreA + " B: " + scoreB;
+    }
+    
+</script>
+ 
 
 </body>
 </html>
