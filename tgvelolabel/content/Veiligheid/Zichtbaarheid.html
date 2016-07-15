@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html lang="nl">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -17,18 +17,18 @@
     
     <div class="row">
         <div class="col-md-12">
-        <a href="../../index_nl.html">
-            <button class="btn btn-primary">
+            
+        <a href="../../index_nl.html" class="btn btn-primary">
                 <span class="glyphicon glyphicon-home" aria-hidden="true"></span> Home
-            </button>
         </a>
+            
         </div>
     
         <div class="col-md-12">
             <h1>Zichtbaarheid</h1>
             <h1 class="subtitle">Hoe goed zijn de lichten van de fiets zichtbaar?</h1>
 
-            <p class="intro">De kwaliteitsparameter 'zichtbaarheid' duidt aan hoe goed de lichten zichtbaar zijn voor en naast de fiets. Daarnaast wordt ook bekeken hoe zeker de fietser is dat zijn fiets brandt en blijft branden.</p>
+            <p class="intro">De kwaliteitsparameter 'zichtbaarheid' duidt aan hoe goed de lichten zichtbaar zijn voor en naast de fiets. Daarnaast wordt ook bekeken hoe zeker de fietser is dat zijn licht brandt en blijft branden.</p>
         </div>
         <div class="col-md-12">
             <h2>Definitie</h2>
@@ -60,20 +60,19 @@
     <div class="col-md-12">
         <h2>Meten</h2>
             <p>De score is enerzijds gebaseerd op observatie, anderzijds op lichtmetingen.<br>
-            De maximale sterkte van de lichten wordt telkens gemeten loodrecht voor het licht, op 45° en op 90° in het horizontale vlak, zoals een naderende auto de lichten zou kunnen zien. Als de lichten instelbaar zijn mag gemeten worden op de ideale hoogte.<br><br>
-            Op onderstaande manieren wordt gekeken of de lichten kunnen afgeschermd worden:
+            De maximale sterkte van de lichten wordt telkens gemeten loodrecht voor het licht, op 45° en op 90° in het horizontale vlak, zoals een naderende auto de lichten zou kunnen zien. Als de lichten instelbaar zijn mag gemeten worden op de ideale hoogte.</p>
+        <p>Op onderstaande manieren wordt gekeken of de lichten kunnen afgeschermd worden:</p>
             <ul>
                 <li>een stuk stof van 40 cm lang wordt aan het zadel gehouden.</li>
                 <li>een dubbele fietstas van 40 cm x 40 cm wordt op de bagagedrager gehangen.</li>
                 <li>een pak van 40cm hoog wordt op de bagagedragers gehouden.</li>
                 <li>een stuk stof van 40cm lang wordt onder het stuur gehouden </li>
             </ul><br>
-            Er wordt bekeken of er een visuele terugkoppeling is of het voorlicht brandt of niet met de fietser zittend op het zadel: 
+        <p>Er wordt bekeken of er een visuele terugkoppeling is of het voorlicht brandt of niet met de fietser zittend op het zadel: </p>
             <ul>
                 <li>Zijn de lichten verborgen achter de structuur van de fiets? </li>
                 <li>Is het, in een omgeving waar ongeveer 500 Lux op het licht valt, zichtbaar of het licht brandt of niet?</li>
             </ul>
-            </p>
     </div>
    
         
@@ -182,37 +181,37 @@
             <p>Tenslotte kan men hieronder nadere eingenschappen van de lichten aangeven</p>
             <div class="checkbox">
                 <label>
-                    <input name="strafpunten" value="1" type="checkbox"> Het voorlicht heeft een andere lichtbron dan led
+                    <input name="strafpunten" type="checkbox"> Het voorlicht heeft een andere lichtbron dan led
                 </label>
             </div>
             <div class="checkbox">
                 <label>
-                    <input name="strafpunten" value="1" type="checkbox"> Het achterlicht heeft een andere lichtbron dan led
+                    <input name="strafpunten" type="checkbox"> Het achterlicht heeft een andere lichtbron dan led
                 </label>
             </div>
             <div class="checkbox">
                 <label>
-                    <input name="strafpunten" value="1" type="checkbox"> Het voorlicht heeft geen ISO 6742 label
+                    <input name="strafpunten" type="checkbox"> Het voorlicht heeft geen ISO 6742 label
                 </label>
             </div>
             <div class="checkbox">
                 <label>
-                    <input name="strafpunten" value="1" type="checkbox"> Het achterlicht heeft geen ISO 6742 label
+                    <input name="strafpunten" type="checkbox"> Het achterlicht heeft geen ISO 6742 label
                 </label>
             </div>
             <div class="checkbox">
                 <label>
-                    <input name="strafpunten" value="1" type="checkbox"> Er is geen visuele terugkoppeling of het voorlicht brandt of niet
+                    <input name="strafpunten" type="checkbox"> Er is geen visuele terugkoppeling of het voorlicht brandt of niet
                 </label>
             </div>
             <div class="checkbox">
                 <label>
-                    <input name="strafpunten" value="1" type="checkbox"> Er is geen visuele terugkoppeling of het achterlicht brandt of niet
+                    <input name="strafpunten" type="checkbox"> Er is geen visuele terugkoppeling of het achterlicht brandt of niet
                 </label>
             </div>
             <div class="checkbox">
                 <label>
-                    <input name="strafpunten" value="1" type="checkbox"> Het voorlicht kan kantelen als er druk wordt uitgeoefend (het is bijvoorbeeld bevestigd aan 1 bout, als die losstaat schijnt het licht naar beneden of boven)
+                    <input name="strafpunten" type="checkbox"> Het voorlicht kan kantelen als er druk wordt uitgeoefend (het is bijvoorbeeld bevestigd aan 1 bout, als die losstaat schijnt het licht naar beneden of boven)
                 </label>
             </div>
             <div class="checkbox">
@@ -222,7 +221,7 @@
             </div>
         
             <button type="button" class="btn btn-success" onclick="calcScore(); return false;">Update score</button>
-        <p>De totale score op zichtbaarheid is <b><span id="score">0</span> %</b></p>
+            <p>De totale score op zichtbaarheid is <b><span id="score">0</span> %</b></p>
         </div>
     </div>
      
@@ -251,9 +250,18 @@
     var $bedekt = document.getElementsByName("bedekt");
     var $strafp = document.getElementsByName("strafpunten");
     
-    var meanCandela = 0;
+    // input default values for testing
+    var i;
+    for(i = 0; i < $lux.length; ++i) {
+        $lux[i].value = "30";
+    }
+    
+    var meanCandela;
     
     function calcScore() {
+        // reset mean
+        meanCandela = 0;
+        
         var l;
         for(l=0; l<$lux.length; ++l) {
             // lux to candela
@@ -261,14 +269,14 @@
             // correctie als afgedekt
             candela *= (2 - parseFloat( $bedekt[l].value )) / 2;
             // max 2 candela in rekening brengen
-            if (candela > 2) { candela = 2; };
+            if (candela > 2) { candela = 2; }
             // gemiddelde updaten
             meanCandela += candela;
         }
         // candela som => gemiddelde
         meanCandela /= $lux.length;
 
-        console.log(meanCandela);
+        console.log("Mean candela: " + meanCandela);
         
         var somStrafp = 0;
         var MAXSTRAFP = 8;
@@ -277,10 +285,12 @@
         for(i=0; i<$strafp.length; ++i) {
             somStrafp += $strafp[i].checked;
         }
-        console.log(somStrafp);
+        console.log("Sum of points: " + somStrafp);
         
-        var score = Math.round( meanCandela * somStrafp / MAXSTRAFP * 50 );
-        console.log(score);
+        var score =  meanCandela / 2 * (1 - (somStrafp / MAXSTRAFP)) * 100 ;
+        
+        console.log("total score: " + score + " %");
+        
         document.getElementById("score").innerHTML = score;
     }
 </script>
