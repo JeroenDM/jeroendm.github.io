@@ -46,8 +46,8 @@
             
             <form class="form-inline">
                   <div class="form-group">
-                    <label>Covered distance in meter</label>
-                    <p>Distance covered on the ground for one pedal stroke.</p>
+                    <label>Afgelegde weg in meter</label>
+                    <p>Afstand afgelegd bij één pedaalomwenteling</p>
                     <input type="number" class="form-control" id="distance" placeholder=0 min=0 max=10 value = 0>
                     <span class="unit">m</span>
                   </div>
@@ -55,20 +55,20 @@
             <br/>
             <form class="form">
                 <div class="form-group">
-                    <label>Gear</label>
-                    <p>Highest or lowest gear?</p>
+                    <label>Versnelling</label>
+                    <p>Zwaarste of lichtste versnelling?</p>
                     <select class="form-control" id="selectRpm">
-                      <option value=0>Lowest gear</option>
-                      <option value=1>Highest gear</option>
+                      <option value=0>Lichtste versnelling</option>
+                      <option value=1>Zwaarste versnelling</option>
                     </select>
                   </div>
             </form>
             <form class="form-inline">
                 <div class="form-group">
-                    <label>Speed @ <span id="outputRpm">50</span> rpm</label>
-                    <p><span id="speed">99</span> km/h</p>
+                    <label>Snelheid @ <span id="outputRpm">50</span> rpm</label>
+                    <p><span id="speed">99</span> km/u</p>
                 </div>
-                <button type="button" class="btn btn-success" onclick="calcSpeed()">Calculate</button>
+                <button type="button" class="btn btn-success" onclick="calcSpeed()">Update</button>
             </form>
         </div>
     </div>
@@ -85,24 +85,24 @@
             <h2>Vergelijk verschillende interne versnelsnaven</h2>
         </div>
 		<div class="col-md-4">
-        <p>In this section you can compare the bicycle speed at 50 rpm and 70 rpm cadence for different gears.</p> 
+        <p>Met deze tool kun je verschillende versnellingssystemen vergelijken.</p> 
 			<form class="form">
 			  <div class="form-group">
-			    <label>Wheel size</label>
-                  <p>The diameter of the rear wheel in inches?</p>
+			    <label>Diameter achterwiel</label>
+                  <p>In inch!</p>
 					<select class="form-control" id="wheelSize">
 					  <option value=28>28 inch</option>
 					  <option value=26>26 inch</option>
 					</select>
 			  </div>
 			  <div class="form-group">
-			    <label># chainring tooth</label>
-                  <p> Number of tooth at the crank</p>
+			    <label># tanden vooraan</label>
+                  <p> Aantal tanden op het kettingblad vooraan</p>
 			    <input type="number" class="form-control" id="front" placeholder=46 min=10 max=80 value="46">
 			  </div>
 			  <div class="form-group">
-			    <label># sprocket tooth</label>
-                  <p>Number of tooth at the back</p>
+			    <label># tanden achteraan</label>
+                  <p>Aantal tanden op het kettingblad achteraan</p>
 			    <input type="number" class="form-control" id="back" placeholder=22 min=5 max=50 value = 22>
 			  </div>
 				<!-- // page refreshes because button is in form tag.
@@ -113,9 +113,9 @@
 
 		<div class="col-md-8">
             <div class="chartArea">
-                <h3>Available speed range</h3>
+                <h3>Snelheidsbereik [km/u]</h3>
                 <div class="caption">
-                    <p>Speed range based on a cadence (or pedaling speed) of 50 rpm for to lower bound to 70 rpm for the upper bound.</p>
+                    <p>Snelheidsbereik gebasseerd op een kadans van 50 rpm voor de ondergrens en 70 rpm voor de bovengrens.</p>
                 </div>
                 <div class = "chart" style="overflow-x: scroll;">
                 </div>
@@ -128,29 +128,29 @@
             <h2>Details van de berekeningen</h2>
         </div>
         <div class="col-md-6">
-        <h3>List of symbols</h3>
-            <p><b>$ω_c$</b> Revolution speed of pedals (cadence).</p>
-            <p><b>$D_w$</b> Rear wheel diameter in inches.</p>
-            <p><b>$T_c$</b> Number of tooth on the chainring at the crank.</p>
-            <p><b>$T_r$</b> Number of tooth on the rear wheel sprocket.</p>
-            <p><b>$r_{min}$</b> Lowest hub gear ratio</p>
-            <p><b>$r_{max}$</b> Highest hub gear ratio</p>
-        <h3>Distance to speed</h3>
-            <p>When the distance for one pedal stroke is known (in m), the speed (in km/h) for a specific cadence (in rpm) is calculated with the formula:</p>
-            <p>$v = \text"distance" ⋅ \text"cadence" ⋅ 0.06$</p>
+        <h3>Lijst met symbolen</h3>
+            <p><b>$ω_c$</b> Rotatiesnelheid pedalen / kadans in rpm (toeren per minuut)</p>
+            <p><b>$D_w$</b> Diameter achterwiel in inch.</p>
+            <p><b>$T_c$</b> Aantal tanden op het kettingblad vooraan.</p>
+            <p><b>$T_r$</b> Aantal tanden op het kettingblad achteraan.</p>
+            <p><b>$r_{min}$</b> Laagste verzet busversnelling (zonder ketting)</p>
+            <p><b>$r_{max}$</b> Hoogste verzet busversnelling (zonder ketting)</p>
+        <h3>Gemeten afstand naar snelheid</h3>
+            <p>Wanneer de afstand voor één pedaalomwenteling gekend is (in m), dan kand de snelheid (in km/u) voor een specifieke kadans (in rpm) berekend worden.</p>
+            <p>$v = \text"afstand" ⋅ ω_c ⋅ 0.06$</p>
         </div>
         <div class="col-md-6">
-            <h3>Minimum speed</h3>
+            <h3>Laagste comfortabele snelheid</h3>
             
-            <p>The minimal comfortable speed is calculated using the lowest hub speed ratio $r_{min}$ and a cadence $ω_c$ of 50 rpm.</p>
+            <p>The laagste comfortabele snelheid wordt berekend op basis van het laagste verzet van de busversnelling $r_{min}$ en een kadans $ω_c$ van 50 rpm.</p>
             <p>\[\table v_{min}, =, D_w ⋅ 0.0254 ⋅ π ⋅ r_{min} ⋅ T_c / T_r ⋅ ω_c/60 ⋅ 3.6\]</p>
-            <p>The conversion constant from inch to meter is 0.0254. 50 rpm is divided by 60 to convert it to revolutions per second. Finaly the result is multiplied by 3.6 to convert to km/h. A calculation exaple for the Rohloff 14.</p>
-            <p>\[\table v_{min}, =, 28⋅0.0254⋅3.1415⋅0.279 ⋅ 46 / 22 ⋅ 50/ 60 ⋅ 3.6; , =, 3.9 \text" km/h" \]</p>
+            <p>Het getal 0.0254 is voor de conversie van inch naar meter. 50 rpm wordt door 60 gedeeld om naar toeren per seconde te gaan. Ten laatste wordt nog eens vermenigvuldigt met 3.6 om naar km/u te gaan. Bijvoordbeeld voor de Rohloff 14 geeft dit onderstaande berekening.</p>
+            <p>\[\table v_{min}, =, 28⋅0.0254⋅3.1415⋅0.279 ⋅ 46 / 22 ⋅ 50/ 60 ⋅ 3.6; , =, 3.9 \text" km/u" \]</p>
             
-            <h3>Maximum speed</h3>
+            <h3>Hoogste comfortabele snelheid</h3>
             
-            <p>Analog to the minimum speed, the maximum is calculated for a Rohlof using $r_{max}$ and a cadence $ω_c$ of 70 rpm.</p>
-            <p>\[\table v_{min}, =, D_w ⋅ 0.0254 ⋅ π ⋅ r_{max} ⋅ T_c / T_r ⋅ ω_c/60 ⋅ 3.6; , =, 28⋅0.0254⋅3.1415⋅1.467 ⋅ 46 / 22 ⋅ 70/ 60 ⋅ 3.6; , =, 28.8 \text" km/h" \]</p>
+            <p>Analoog kan de hoogste snelheid voor de Rohloff 14 berekend worden op basis van $r_{max}$ en een kadans $ω_c$ van 70 rpm.</p>
+            <p>\[\table v_{min}, =, D_w ⋅ 0.0254 ⋅ π ⋅ r_{max} ⋅ T_c / T_r ⋅ ω_c/60 ⋅ 3.6; , =, 28⋅0.0254⋅3.1415⋅1.467 ⋅ 46 / 22 ⋅ 70/ 60 ⋅ 3.6; , =, 28.8 \text" km/u" \]</p>
         </div>
     </div>
     
