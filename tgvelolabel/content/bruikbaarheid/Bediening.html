@@ -3,12 +3,18 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Template</title>
+<title>Bediening</title>
 
 <link rel="stylesheet"  type="text/css"  href="../../css/bootstrap.css">
 <link rel="stylesheet" type="text/css" href="../../css/site_specific.css">
 
 <link rel="stylesheet" href="../../css/jqmath-0.4.3.css">
+    
+<style>
+    .inputlist li {
+        list-style-type: none;
+    }
+</style>
 
 </head>
     
@@ -30,7 +36,7 @@
 
             <p class="intro">Verschillende fietsen laten zich op een verschillende manier bedienen. Remmen, versnellingen, bel, lichten en motorondersteuning hebben hendels, knoppen of draaigrepen nodig om te kunnen functioneren. De kwaliteitsparameter 'bediening' brengt in kaart hoe eenvoudig dit gebeurt.</p>
         </div>
-        <div class="col-md-6">
+        <div class="col-md-12">
             <h2>Definitie</h2>
 
             <p>De score 'Bediening' is een vergelijking met het maximaal haalbare. Een hoge score betekent:</p>
@@ -44,7 +50,7 @@
             
             
         </div>
-        <div class="col-md-6">
+        <div class="col-md-12">
             <h2>Meten</h2>
 
             <p>De metingen zijn gebaseerd op observatie. Geef een antwoord op onderstaande vragen.<br>
@@ -54,18 +60,46 @@
                 <li>Versnellingen (gemiddelde waardes van punt a tot f)
  
                 <ol type="a">
-                    <li>Hoeveel bedieningen zijn er om de overbrengingsverhouding tussen pedalen en wiel te kiezen? Waarde wordt rechtstreeks gebruikt. Voor een fiets met automatische versnellingen of zonder versnellingen, geef 0. (van het moment dat er meer dan 1 bediening is, zal de waarde voor 'versnellingen' negatief zijn)</li>
-                    <li>Kan één van de bedieningen kan in een 'foute' positie gezet worden (geen index of fout gemonteerd: kan zich bijvoorbeeld verraden als ratelende ketting)?</li>
-                    <li>Is één van de bedieningen omgekeerd gemonteerd?</li>
-                    <li>Moet een hand opgehoffen worden om de versnellingen te bedienen?</li>
-                    <li>Verbiedt de gebruiksaanwijzing schakelen bij stilstand, of is dit fysiek niet mogelijk?<br/>
-                        0 = de versnelling kan van zwaarste naar lichtste gezet worden tijdens stilstand<br/>
-                        ½ = de versnelling kan niet volledig verzet worden, of er zijn bijkomende voorwaarden (bijvoorbeeld er moet eerst achteruit getrapt worden)<br/>
-                        1 = bijvoorbeeld derailleurversnelling </li> 
-                    <li>Is het schakelen tijdens het trappen mogelijk? <br/>
-                        0 = schakelen tijdens trappen mogelijk in alle omstandigheden, ook bergop bijvoorbeeld en als er kracht gezet wordt op de pedalen<br/>
-                        ½ = schakelen tijdens trappen in sommige omstandigheden mogelijk<br/>
-                        1 = schakelen tijdens trappen niet mogelijk (kan eventueel getest worden op de e-checker: toerental ongeveer 60 rpm, ongeveer 100W trapaandrijving. Als de versnelling niet geschakeld is binnen 10 rotaties mag aangenomen worden dat het niet mogelijk is. Als het wel mogelijk is om te schakelen bij kleinere belasting, bijvoorbeeld als er geen weerstand gegeven wordt aan het wiel, wordt ½ gegeven.)</li>
+                    <li>Hoeveel bedieningen zijn er om de overbrengingsverhouding tussen pedalen en wiel te kiezen? Waarde wordt rechtstreeks gebruikt. Voor een fiets met automatische versnellingen of zonder versnellingen, geef 0. (van het moment dat er meer dan 1 bediening is, zal de waarde voor 'versnellingen' negatief zijn)<br/>
+                        <select name="ver1" class="form-control"> 
+                            <option value="0">0 automatische / geen versnellingen</option>
+                            <option value="1">1 bediening (bijvoorbeeld draaigreep)</option>
+                            <option value="2">2 bedieningen (vaak bij derailleurs)</option>
+                            <option value="3">3 of meer bedieningen</option>
+                        </select>
+                    </li>
+                    <li>Kan één van de bedieningen kan in een 'foute' positie gezet worden (geen index of fout gemonteerd: kan zich bijvoorbeeld verraden als ratelende ketting)?
+                    <ul class="inputlist">
+                        <li><input name="ver2" value="1" type="radio"> Ja de bediening kan fout gezet worden (en dus misschien kapot gaan).</li>
+                        <li><input name="ver2" value="0" type="radio"> Neen, de bediening is foolproof.</li>
+                    </ul>
+                    </li>
+                    <li>Is één van de bedieningen omgekeerd gemonteerd?
+                    <ul class="inputlist">
+                        <li><input name="ver3" value="1" type="radio"> Ja</li>
+                        <li><input name="ver3" value="0" type="radio"> Neen</li>
+                    </ul>
+                    </li>
+                    <li>Moet een hand opgehoffen worden om de versnellingen te bedienen?
+                    <ul class="inputlist">
+                        <li><input name="ver4" value="1" type="radio"> Ja</li>
+                        <li><input name="ver4" value="0" type="radio"> Neen</li>
+                    </ul>
+                    </li>
+                    <li>Verbiedt de gebruiksaanwijzing schakelen bij stilstand, of is dit fysiek niet mogelijk?
+                        <ul class="inputlist">
+                            <li><input name="ver5" value="0" type="radio">0 = de versnelling kan van zwaarste naar lichtste gezet worden tijdens stilstand</li>
+                            <li><input name="ver5" value="0.5" type="radio">½ = de versnelling kan niet volledig verzet worden, of er zijn bijkomende voorwaarden (bijvoorbeeld er moet eerst achteruit getrapt worden)</li>
+                            <li><input name="ver5" value="1" type="radio">1 = bijvoorbeeld derailleurversnelling</li>
+                        </ul>
+                    </li> 
+                    <li>Is het schakelen tijdens het trappen mogelijk?
+                        <ul class="inputlist">
+                            <li><input name="ver6" value="0" type="radio">0 = schakelen tijdens trappen mogelijk in alle omstandigheden, ook bergop bijvoorbeeld en als er kracht gezet wordt op de pedalen</li>
+                            <li><input name="ver6" value="0.5" type="radio">½ = schakelen tijdens trappen in sommige omstandigheden mogelijk</li>
+                            <li><input name="ver6" value="1" type="radio">1 = schakelen tijdens trappen niet mogelijk (kan eventueel getest worden op de e-checker: toerental ongeveer 60 rpm, ongeveer 100W trapaandrijving. Als de versnelling niet geschakeld is binnen 10 rotaties mag aangenomen worden dat het niet mogelijk is. Als het wel mogelijk is om te schakelen bij kleinere belasting, bijvoorbeeld als er geen weerstand gegeven wordt aan het wiel, wordt ½ gegeven.)</li>
+                        </ul>
+                    </li>
                     </ol></li>
                 <li>Remmen; gemiddelde punt a tot d.
                 <ol type="a">
@@ -95,7 +129,11 @@
                     <li>Indien het voorlicht niet automatisch aangaat bij duister: het voorlicht is niet bedienbaar vanaf de zitpositie</li>
                     <li>Indien het achterlicht niet automatisch aangaat bij duister: het achterlicht is niet bedienbaar vanaf de zitpositie</li>
                 </ol></li>
-            </ol>    
+            </ol>
+            
+            <h2>Resultaat</h2>
+            <p>Score op <b>bediening: <span id="bediening">100</span> %</b></p>
+            <button type="button" class="btn btn-success" onclick="calcScore(); return false;">Update score</button>
         </div>
     </div>
     
@@ -122,10 +160,38 @@
 <!-- dependencies for d3 -->
 <script src="../../js/d3.min.js"></script>
 <!-- custom javascript -->
-<script src="../../js/jquery-1.4.3.min.js"></script>
-<script src="../../js/jqmath-etc-0.4.4.min.js" charset="utf-8"></script>
-<script src="../../js/trap_modules.js"></script>
-<script src="../../js/trap_main.js"></script>    
+<script>
+    var names = ["ver1", "ver2", "ver3", "ver4", "ver5", "ver6"];
+    var strafpuntenBediening;
+    
+    function calcScore() {
+        strafpuntenBediening = 0;
+        console.log(strafpuntenBediening);
+        
+        var n;
+        for(n=0; n<names.length; ++n) {
+            var $els = document.getElementsByName(names[n]);
+            
+            if ($els.length == 1) {
+                console.log("in for loop, if: " + strafpuntenBediening);
+                strafpuntenBediening += parseFloat( $els[0].value );
+            } else {
+                console.log("in for loop, else: " + strafpuntenBediening);
+                var i;
+                for(i=0; i<$els.length; ++i) {
+                    if ($els[i].checked) {
+                        strafpuntenBediening += parseFloat( $els[i].value );
+                    }
+                }
+            }
+        }
+        
+        console.log(strafpuntenBediening);
+        var scoreBediening = Math.round( (8-strafpuntenBediening) / 8 * 100 );
+        
+        document.getElementById("bediening").innerHTML = scoreBediening;
+    }
+</script> 
 
 </body>
 </html>
