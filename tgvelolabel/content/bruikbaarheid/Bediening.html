@@ -103,32 +103,97 @@
                     </ol></li>
                 <li>Remmen; gemiddelde punt a tot d.
                 <ol type="a">
-                    <li>Wat is de kleinst overmeten afstand La van de achterkant van het stuur tot de voorkant van de linkse rem (rem niet ingedrukt)?<br/>
+                    <li>Wat is de kleinst overmeten afstand La van de achterkant van het stuur tot de voorkant van de linkse rem (rem niet ingedrukt)?
+                        <div class="row">
+                            <div class="col-md-2">
+                                <input type="number" class="form-control" id="rem1" placeholder="0" value="0"/>
+                            </div>
+                        </div>
                     Berekende waarde = (La - 80) / (100 - 80)</li> 
-                    <li>Kleinst overmeten afstand van de achterkant van het stuur tot de voorkant van de rechtse rem (rem niet ingedrukt). <br/>
+                    <li>Kleinst overmeten afstand van de achterkant van het stuur tot de voorkant van de rechtse rem (rem niet ingedrukt).
+                        <div class="row">
+                            <div class="col-md-2">
+                                <input type="number" class="form-control" id="rem2" placeholder="0" value="0"/>
+                            </div>
+                        </div>
                     Berekende waarde = (La - 80) / (100 - 80)</li> 
-                    <li>Afstand Lb op de linker remhendel waar de grootst overmeten afstand van de achterkant van het stuur tot de voorkant van de remhendel kleiner is dan 100mm. <br/>
+                    <li>Afstand Lb op de linker remhendel waar de grootst overmeten afstand van de achterkant van het stuur tot de voorkant van de remhendel kleiner is dan 100mm.
+                        <div class="row">
+                            <div class="col-md-2">
+                                <input type="number" class="form-control" id="rem3" placeholder="0" value="0"/>
+                            </div>
+                        </div>
                     Berekende waarde = (100 - Lb) / 100</li> 
-                    <li>Afstand op de rechter remhendel waar de grootst overmeten afstand van de achterkant van het stuur tot de voorkant van de remhendel kleiner is dan 100mm.<br/>
+                    <li>Afstand op de rechter remhendel waar de grootst overmeten afstand van de achterkant van het stuur tot de voorkant van de remhendel kleiner is dan 100mm.
+                        <div class="row">
+                            <div class="col-md-2">
+                                <input type="number" class="form-control" id="rem4" placeholder="0" value="0"/>
+                            </div>
+                        </div>
                     Berekende waarde = (100 - Lb) / 100</li>
                 </ol></li>
-                <li>Bel: Waarde 1 als een hand moet opgehoffen worden om de bel te bedienen</li>
+                <li>Bel: moet de hand worden opgehoffen om de bel te bedienin?
+                    <ul class="inputlist">
+                        <li><input name="bel" value="1" type="radio"> Ja</li>
+                        <li><input name="bel" value="0" type="radio"> Neen</li>
+                    </ul>
+                </li>
                 <li>Motor: Als er geen motor is, waarde nul. Als er een motor is; gemiddelde punt a tot f
                 <ol type="a">
-                    <li>Om de ondersteuning uit te zetten moet het hele systeem uitgezet worden. ( = Geen nul ondersteuning bij de ondersteuningsniveau’s aanwezig)</li> 
-                    <li>Om het ondersteuningsniveau te veranderen moet een hand opgehoffen worden.</li> 
-                    <li>Er is geen rechtstreeks commando ‘omhoog’ of ‘omlaag’ ter beschikking</li> 
-                    <li>Het ondersteuningsniveau moet ingesteld worden via een touch screen</li> 
-                    <li>Afstand Lc tussen de centers van de ondersteuningsnknoppen (de knoppen om de ondersteuning te veranderen)<br>
+                    <li>Om de ondersteuning uit te zetten moet het hele systeem uitgezet worden. ( = Geen nul ondersteuning bij de ondersteuningsniveau’s aanwezig)
+                    <ul class="inputlist">
+                        <li><input name="motor1" value="1" type="radio"> Ja</li>
+                        <li><input name="motor1" value="0" type="radio"> Neen</li>
+                    </ul>
+                    </li> 
+                    <li>Om het ondersteuningsniveau te veranderen moet een hand opgehoffen worden.
+                    <ul class="inputlist">
+                        <li><input name="motor1" value="1" type="radio"> Ja</li>
+                        <li><input name="motor1" value="0" type="radio"> Neen</li>
+                    </ul>
+                    </li> 
+                    <li>Er is geen rechtstreeks commando ‘omhoog’ of ‘omlaag’ ter beschikking
+                    <ul class="inputlist">
+                        <li><input name="motor1" value="1" type="radio"> Ja</li>
+                        <li><input name="motor1" value="0" type="radio"> Neen</li>
+                    </ul>
+                    </li> 
+                    <li>Het ondersteuningsniveau moet ingesteld worden via een touch screen (en gaat dus niet met handschoenen).
+                    <ul class="inputlist">
+                        <li><input name="motor1" value="1" type="radio"> Ja</li>
+                        <li><input name="motor1" value="0" type="radio"> Neen</li>
+                    </ul>
+                    </li> 
+                    <li>Afstand Lc tussen de centers van de ondersteuningsnknoppen (de knoppen om de ondersteuning te veranderen)
+                        <div class="row">
+                            <div class="col-md-2">
+                                <input type="number" class="form-control" id="motor1" placeholder="0" value="0"/>
+                            </div>
+                        </div>
                     Berekende waarde = (22 - Lc) / (22 - 8)</li> 
-                    <li>Ingeschreven diameter Ld van de kleinste ondersteuningsnknop<br>
+                    <li>Ingeschreven diameter Ld van de kleinste ondersteuningsnknop
+                        <div class="row">
+                            <div class="col-md-2">
+                                <input type="number" class="form-control" id="motor2" placeholder="0" value="0"/>
+                            </div>
+                        </div>
                     Berekende waarde = (22 - Ld) / (22 - 8)</li>
                 </ol></li>
                 <li>Lichten; gemiddelde punt a tot b
                 <ol type="a">
-                    <li>Indien het voorlicht niet automatisch aangaat bij duister: het voorlicht is niet bedienbaar vanaf de zitpositie</li>
-                    <li>Indien het achterlicht niet automatisch aangaat bij duister: het achterlicht is niet bedienbaar vanaf de zitpositie</li>
-                </ol></li>
+                    <li>Indien het voorlicht niet automatisch aangaat bij duister: het voorlicht is niet bedienbaar vanaf de zitpositie
+                    <ul class="inputlist">
+                        <li><input name="motor1" value="1" type="radio"> Ja</li>
+                        <li><input name="motor1" value="0" type="radio"> Neen</li>
+                    </ul></li>
+                    <li>Indien het achterlicht niet automatisch aangaat bij duister: het achterlicht is niet bedienbaar vanaf de zitpositie
+                    <ul class="inputlist">
+                        <li><input name="motor1" value="1" type="radio"> Ja</li>
+                        <li><input name="motor1" value="0" type="radio"> Neen</li>
+                    </ul>
+                    </li>
+                </ol>
+                </li>
             </ol>
             
             <h2>Resultaat</h2>
