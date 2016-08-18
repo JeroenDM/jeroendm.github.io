@@ -27,7 +27,7 @@
         <h1>Banden</h1>
         <h1 class="subtitle">Grip / weerstand tegen slippen</h1>
             
-        <p class="intro">Op gladde ondergrond, bij plots remmen, in scherpe bochten en bij nat weer is goede grip van de banden op het wegdek essintieel.</p>
+        <p class="intro">Op gladde ondergrond, bij plots remmen, in scherpe bochten en bij nat weer is goede grip van de banden op het wegdek essentiëel.</p>
             
         </div>
     </div>
@@ -46,69 +46,14 @@
     <div class="row">
         <div class="col-md-12">
             <h2>Meetapparatuur</h2>
-            <img src="datalogging_schema.png" alt="schema datalogging" width="80%" />
-            <p>De kracht wordt gemeten met een <a href="http://www.robotshop.com/en/type-s-load-cell-100-kg.html" target="_blank">krachtcell</a> tussen de sleden en de katrol. De zeer lage spanning van de krachtcell wordt ingelezen met een wheat stone bridge interface<a href="http://www.robotshop.com/en/gravity-hx711-load-cell-wheatstone-bridge-interface.html" target="_blank">test</a></p>
-            <ul>
-                <li><a href="datasheet-loadcell.pdf" target="_blank">Datasheet krachtcell</a></li>
-                <li><a href="mechanical-drawing-loadcell.pdf" target="_blank">Afmetingen krachtcell</a></li>
-                <li><a href="datasheet_hx711.pdf" target="_blank">Datasheet hx711</a></li>
-                <li><a href="http://www.dfrobot.com/wiki/index.php/Weight_Sensor_Module_V1" target="_blank">Hhandleiding hx711</a>
-            </ul>
-            <div class="row">
-                <div class="col-md-3">
-                    <img src="type-s-load-cell-100-kg.jpg" alt="krachtcel" width="100%" />
-                </div>
-                <div class="col-md-3">
-                    <img src="hx711.jpg" alt="krachtcel" width="100%" />
-                </div>
-                <div class="col-md-3">
-                    <img src="arduino-UNO.png" alt="krachtcel" width="100%" />
-                </div>
-                <div class="col-md-3">
-                    <img src="scilabgui_temp.png" alt="krachtcel" width="100%" />
-                </div>
+            <div class="col-md-6">
+                <p>Na het vergelijken van testen met krachtcell en trekweegschaal blijkt de laatste optie snel herhaalbare resultaten op te leveren. Zowel piekkracht als gemiddelde kracht kan gebruikt worden als maatstaaf om banden te vergelijken. Hieronder een voorbeeld van drie slipkracht metingen waarbij de kracht gemeten is met een krachtcell en de data gelogged met Arduino.</p>
+                <img src="grip_voorbeeld.png" alt="bandenslede" width="110%" />
             </div>
-            <h2>Datalogging</h2>
-            <p>De data van de krachtcell interface wordt ingelezen en omgerekend naar spanning door arduino. Vanuit Arduino wordt het over usb via seriële communicatie doorgestuurd naar de computer waar een Scilab programma de data inleest, omrekend naar Newton en opslaat.</p>
-            <pre>
-<span style="color: #434F54;">/*&nbsp;Setup&nbsp;and&nbsp;read&nbsp;load&nbsp;cell&nbsp;connected&nbsp;to&nbsp;arduino&nbsp;via&nbsp;the&nbsp;hx711&nbsp;brakeout&nbsp;board</span>
-<span style="color: #434F54;">&nbsp;*&nbsp;Code&nbsp;based&nbsp;on&nbsp;sample&nbsp;for&nbsp;digital&nbsp;weight&nbsp;scale&nbsp;of&nbsp;hx711</span>
-<span style="color: #434F54;">&nbsp;*&nbsp;library&nbsp;design:&nbsp;Weihong&nbsp;Guan&nbsp;(@aguegu)</span>
-<span style="color: #434F54;">&nbsp;*&nbsp;library&nbsp;host&nbsp;on</span>
-<span style="color: #434F54;">&nbsp;*https://github.com/aguegu/ardulibs/tree/3cdb78f3727d9682f7fd22156604fc1e4edd75d1/hx711</span>
-<span style="color: #434F54;">&nbsp;*/</span>
-
-#include&nbsp;&lt;Hx711.h&gt;
-
-<span style="color: #434F54;">//&nbsp;Make&nbsp;a&nbsp;Hx711&nbsp;object&nbsp;named&nbsp;scale</span>
-<span style="color: #434F54;">//&nbsp;Hx711.DOUT&nbsp;-&nbsp;pin&nbsp;#A2</span>
-<span style="color: #434F54;">//&nbsp;Hx711.SCK&nbsp;-&nbsp;pin&nbsp;#A3</span>
-Hx711&nbsp;scale(A2,&nbsp;A3);
-
-<span style="color: #00979C;">void</span> <span style="color: #5E6D03;">setup</span>() {
-&nbsp;&nbsp;<span style="color: #434F54;">// Setup serial communication</span>
-&nbsp;&nbsp;<span style="color: #D35400;"><b>Serial</b></span>.<span style="color: #D35400;">begin</span>(9600);
-&nbsp;&nbsp;
-&nbsp;&nbsp;<span style="color: #434F54;">// Set scalefactor for conversion to kg</span>
-&nbsp;&nbsp;<span style="color: #434F54;">// (uitgang 24 bit ADC -&gt; voltage -&gt; kg</span>
-&nbsp;&nbsp;scale.setScale(1992.0/0.033);
-&nbsp;&nbsp;
-&nbsp;&nbsp;<span style="color: #434F54;">// Set size of moving average on data to reduce noise</span>
-&nbsp;&nbsp;<span style="color: #434F54;">//scale.averageValue(3);</span>
-}
-
-<span style="color: #00979C;">void</span> <span style="color: #5E6D03;">loop</span>() {
-&nbsp;&nbsp;<span style="color: #00979C;">float</span> time = <span style="color: #D35400;">millis</span>()/1000.0;
-&nbsp;&nbsp;
-&nbsp;&nbsp;<span style="color: #434F54;">// Print weight in kg (NOT IN gram) to serial port</span>
-&nbsp;&nbsp;<span style="color: #D35400;"><b>Serial</b></span>.<span style="color: #D35400;">print</span>(scale.getGram(), 3);
-&nbsp;&nbsp;<span style="color: #D35400;"><b>Serial</b></span>.<span style="color: #D35400;">print</span>(<span style="color: #006699;">"\t"</span>);
-&nbsp;&nbsp;<span style="color: #434F54;">// Print a timestamp</span>
-&nbsp;&nbsp;<span style="color: #D35400;"><b>Serial</b></span>.<span style="color: #D35400;">println</span>(time, 3);
-&nbsp;&nbsp;
-&nbsp;&nbsp;<span style="color: #D35400;">delay</span>(100);
-}
-            </pre>
+            <div class="col-md-6">
+                <p>Eenvoudiger in gebruikt dan een krachtcell is een trekweegschaal met digitale uitlezing. In het TGVelo testlabo wordt de <a href="https://www.kern-sohn.com/nl/HCB" target="_blank">Kern HCB 99K50</a> gebruikt, weergegeven in onderstaande figuur.</p>
+                <img src="urnster.jpg" alt="bandenslede" width="80%" />
+            </div>
         </div>
     </div>
 </div>
