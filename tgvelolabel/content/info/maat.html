@@ -67,14 +67,15 @@
         <h1>TGVelo maatsysteem</h1>
         <h1 class="subtitle">Wie past er op een fiets?</h1>
             
-        <p class="intro">Bij dagelijks gebruik is een comfortabele houding op de fiets belangrijk. Enkel op basis van de framemaat is het moeilijk om te beslissen of een fiets past. Het TGVelo label introduceert twee essentiële aspecten voor een passende fiets. Enerzijds wordt de minimale en maximale lichaamslengte gedefinieerd die comfortabel op de fiets passen. Anderzijds wordt een hoek gedefineerd dat zithouding aanduidt.</p>
+        <p class="intro">Bij dagelijks gebruik is een comfortabele houding op de fiets belangrijk. Enkel op basis van de framemaat is het moeilijk om te beslissen of een fiets past. Het TGVelo label introduceert twee essentiële aspecten voor een passende fiets. Enerzijds wordt de minimale en maximale lichaamslengtes gedefinieerd die comfortabel op de fiets passen. Anderzijds wordt een hoek gedefineerd die zithouding aanduidt.</p>
         </div>
     </div>
     
     <div class="row">
         <div class="col-md-12">
             <h2>Lichaamslengte geschikt voor de fiets</h2>
-            <p>In deze stap meten we de zadellengte om de bepalen welke mensen er op de fiets passen. De maten worden onbelast gemeten, ook als er een verend zadel aanwezig is (alle maten in meter). Voer de meting uit voor zadel in hoogste en laagste stand met volgende definitie:</p>
+            <p>Voor de bepaling van de geschikte lichaamslengtes wordt gebruik gemaakt van de zadellengte. Er wordt uitgegaan van de vuistregel dat de zadellengte ongeveer 1,1 maal de binnenbeenlengte moet bedragen (Dit is een eerder kleine factor, zadels zullen vaak nog wat hoger kunnen gezet worden). Om van binnenbeenlengte naar lichaamslengte te gaan, werd gebruikt gemaakt van ergonomische tabellen. De "geschikte lichaamslengte" kan op deze manier nooit absoluut gebruikt worden, maar geeft een aanduiding van de geschiktheid van de fiets voor mensen van een bepaalde lengte, op basis van de lichaamsverhoudingen.</p>
+            <p>Voer de meting uit voor zadel in hoogste en laagste stand met volgende definitie (afmetingen in meter):</p>
             <p><b>Lz =</b> Zadellengte, de grootst mogelijke afstand tussen het snijpunt van zadeloppervlak en hartlijn van de zadelbuis tot het oppervlak van de pedaal.
 </p>
                             <div class="col-md-6">
@@ -127,48 +128,50 @@
 
             </div>
             
-            <h2>Houding op de fiets (stuur niet instelbaar)</h2>
+            <h2>Houding op de fiets</h2>
             
-            <p>Als het stuur niet instelbaar is moeten de metingen voor de houding enkel voor lage en hoge zadelpositie gemeten worden. Volgende parameters worden opgemeten voor lage en hoge </p>
+            <p>Om te bepalen welke houding een fietser op een fiets zal aannemen moeten andere maten opgenomen worden op een fiets. Onderstaande tool helpt om een beeld te geven welke houding een fietser min of meer zal hebben. Het cijfer dat berekend wordt geeft een aanduiding in welke mate de rug naar voor zal hellen op de fiets. Een kleiner cijfer geeft een sportievere houding aan.
+            <br>Er wordt ook een aanduiding gegeven of de fietser in "Hollandse houding" kan fietsen of niet. De Hollandse houding wordt gekenmerkt door een rechte, min of meer verticale rug, waarbij de armen licht gebogen ontspannen op het stuur kunnen leunen, zoals men op een paard zou rijden.</p>
             
             <p><b>Hz</b> Zadelhoogte, de kortst mogelijke afstand tussen het oppervlak van het zadel en de grond.</p>
             <p><b>Hs</b> Stuurhoogte, de kortst mogelijke afstand tussen de verbinding van de centra van de handvatten tot de grond.</p>
             <p><b>Ls</b> Stuurlengte of zitlengte, de afstand tussen de verbinding van de centra van de handvatten tot het snijpunt van zadeloppervlak en hartlijn van de zadelbuis, evenwijdig met de grond gemeten.</p>
             
-            <h4>Stuurhoogte</h4>
+            <h4>Tool</h4>
             <form class="form form-inline">
                 <div class="form-group">
-                    <label>Hs</label>
-                    <input type="number" class="form-control" id="Hs" placeholder=1.2 value="1.2">
+                    <label>Lz</label>
+                    <input type="number" class="form-control" id="Lz" placeholder=1.2 value="1.2"> m zadellengte  
                 </div>
             </form>
     
+            <form class="form form-inline">
+                <div class="form-group">
+                    <label>Hz</label>
+                    <input type="number" class="form-control" id="Hz" placeholder=1 value="1"> m zadelhoogte 
+                </div>
+            </form>
+            
+            <form class="form form-inline">
+                <div class="form-group">
+                    <label>Hs</label>
+                    <input type="number" class="form-control" id="Hs" placeholder=1.2 value="1.2"> m stuurhoogte
+                </div>
+            </form>
+            
+            <form class="form form-inline">
+                <div class="form-group">
+                    <label>Ls</label>
+                    <input type="number" class="form-control" id="Ls" placeholder=1.2 value="1.2"> m stuurlengte 
+                </div>
+            </form>
+            
             <div class="col-md-6">
-                <h4>Zadel in laagste positie</h4>
-                <form class="form">
-                    <div class="form-group">
-                        <label>Hz min</label>
-                        <input type="number" class="form-control" id="Hzmin" placeholder=1 min=0 max=200 value="1">
-                    </div>
-                    <div class="form-group">
-                        <label>Ls min</label>
-                        <input type="number" class="form-control" id="Lsmin" placeholder=0.5 min=0 max=200 value="0.5">
-                    </div>
-                </form>
+                
             </div>
  
             <div class="col-md-6">
-                <h4>Zadel in hoogste positie</h4>
-                <form class="form">
-                    <div class="form-group">
-                        <label>Hz max</label>
-                        <input type="number" class="form-control" id="Hzmax" placeholder=0 min=0 max=200 value="0">
-                    </div>
-                    <div class="form-group">
-                        <label>Ls max</label>
-                        <input type="number" class="form-control" id="Lsmax" placeholder=0 min=0 max=200 value="0">
-                    </div>
-                </form>
+                
             </div>
             
             <div class="row">
@@ -195,7 +198,7 @@
             
             <h2>Houding op de fiets (stuur instelbaar)</h2>
             
-            <p>Indien het stuur instelbaar is zijn er meer mogelijkheden om de houding aan te passen. Dit houd ook in dat er meer parameters gemeten moeten worden om een volledig beeld te krijgen van de mogelijke houdingen.</p>
+            <p>Indien het stuur instelbaar is, zijn er meer mogelijkheden om de houding aan te passen. Dit houdt ook in dat er meer parameters gemeten moeten worden om een volledig beeld te krijgen van de mogelijke houdingen.</p>
             
             <p><b>Hz</b> Zadelhoogte, de kortst mogelijke afstand tussen het oppervlak van het zadel en de grond.</p>
             <p><b>Hs</b> Stuurhoogte, de kortst mogelijke afstand tussen de verbinding van de centra van de handvatten tot de grond.</p>

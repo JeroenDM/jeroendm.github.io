@@ -34,7 +34,8 @@
     <div class="row">
         <div class="col-md-6">
             <h2>Definitie</h2>
-            <p>Snelheid waarmee de fietser in genormaliseerde omstandigheden rijdt, assistentieniveau maximaal, meetrappen aan 100 Watt. Bij pedelecs komt dit vaak overeen met de afschakelsnelheid (25 km/u) als de motor krachtig genoeg is. Bij speed-pedelecs is de ontwerpsnelheid een zeer onderschijdende factor.</p>
+            <p>De ontwerpsnelheid is de snelheid waarmee de fietser in genormaliseerde omstandigheden rijdt, assistentieniveau maximaal, meetrappen aan 100 Watt. Bij pedelecs komt dit vaak overeen met de afschakelsnelheid (25 km/u) als de motor krachtig genoeg is. Bij speed-pedelecs is de ontwerpsnelheid een zeer onderscheidende factor.</p>
+            <p>Ook voor niet-elektrische fietsen kan deze definitie gebruikt worden om aan te duiden hoe efficiënt een fiets is.</p>
             <img src="design_speed_explanation.png" alt="ontwerpsnelheid_schema" width="100%"/>
         </div>
         <div class="col-md-6">
@@ -51,13 +52,14 @@
     <div class="row">
         <div class="col-md-12">
             <h2>Eenvoudige schatting op de weg</h2>
-            <p>Installeer een snelheidmeter op de fiets die kan meten tot op +/- 1 km/u nauwkeurig. Installeer en vermogenmeter (vermogen van de mens aan de pedalen) die kan meten tot op +/- 5 W nauwkeurig. Voorbeelden zijn de pedalen van Garmin of een crank van SRAM met vermogensmeting. In de meest ideale situatie word de snelheid en het vermogen gelogged op een apparaat zodat het achteraf op de computer kan geanalyseerd worden.</p>
+            <p>Installeer een snelheidmeter op de fiets die kan meten tot op +/- 1 km/u nauwkeurig. Installeer een vermogenmeter (vermogen van de mens aan de pedalen) die kan meten tot op +/- 5 W nauwkeurig. In de meest ideale situatie word de snelheid en het vermogen gelogged op een apparaat zodat het achteraf op de computer kan geanalyseerd worden.</p>
             <p>Zoek een testsite met volgende eigenschappen:</p>
             <ul>
-                <li>Een vlakke weg (geen helling groter dan +/- 0.2 %.</li>
+                <li>Een vlakke weg (geen helling groter dan +/- 0.2 %).</li>
                 <li>Het wegdek is gladde beton of asfalt zoder bulten of randjes. Géén tegels, zand, kasseien, ...</li>
                 <li>De temperatuur is tussen 14 °C en 26 °C.</li>
                 <li>De geografische ligging van de meetsite is niet meer dan 600 m boven zeeniveau.</li>
+                <li>De wind blijft gedurende de test constant en minder dan 2 m/s </li>
             </ul>
             
             <p>De test kan dan worden uitgevoerd door een persoon met volgende eigenschappen:</p>
@@ -67,7 +69,7 @@
                 <li>De persoon heeft een beschermingspak aan met kap om de invloed van kleding te standaardiseren.</li>
             </ul>
             
-            <p>De test zelf wordt uitgevoerg met de fiets in maximale assistentie. Rijdt twee minuten rechtdoor met een trapvermogen van 100 W. Rijdt daarna twee minuten in de tegenovergestelde richting met een trapvermogen van 100 W. De constante snelheid die wordt gehaald is de ontwerpsnelheid in die richten. Het gemiddelde van de twee snelheiden is dan de ontwerpsnelheid van de fiets.</p>
+            <p>De test zelf wordt uitgevoerd met de fiets in maximale assistentie. Rij twee minuten rechtdoor met een trapvermogen van 100 W. Rij daarna twee minuten in de tegenovergestelde richting met een trapvermogen van 100 W. De constante snelheid die wordt gehaald is de ontwerpsnelheid in die richting. Het gemiddelde van de twee snelheden is dan de ontwerpsnelheid van de fiets.</p>
             
             <h2>Berekening op basis van vermogensmeting</h2>
             <p>Voor de berekening zijn verschillende gegevens nodig uit voorafgaande metingen:</p>
@@ -79,10 +81,10 @@
             </ul>
             <p>Het theoretisch benodigde voormogen kan in functie van de snelheid berekend worden.</p>
             <p>Pw(v) = (M * g * Cr + 0.5 * rho * CdA * v^2) * v</p>
-            <p>Dit is op een vlakke weg zonder wind. Met de gravitatieconstante g = 9.81 m/s^2, luchtdichtheid rho = 1.225 kg/m^3 en M het totale gewicht van fiets met volle belanding en rijder. Bij de functie van motorvermogen aan het wiel word 100 W toegevoegd. (verwaarlozen kettingverliezen?) De grootste snelheid waarvoor Pm(v) + 100 = Pw(v) is de ontwerpsnelheid.</p>
+            <p>Dit is op een vlakke weg zonder wind. Met de gravitatieconstante g = 9.81 m/s^2, luchtdichtheid rho = 1.225 kg/m^3 en M het totale gewicht van fiets met volle belanding en rijder. Bij de functie van motorvermogen aan het wiel wordt 100 W toegevoegd min de verliezen door het kettingrendement. De grootste snelheid waarvoor Pm(v) + 100 = Pw(v) is de ontwerpsnelheid.</p>
             
             <h2>Meting op basis van simulatie in labo</h2>
-            <p>De formule voor het weerstandsvermogen in functie van de snelheid uit de vorige sectie kan gebruikt worden om een normale rit rechtdoor te simuleren op een testbank. Wanneer men dan op een testbank 100 W aan de pedalen aanlegt, de fiets in hoogste assistentie en de weerstand aan het wiel in functie van de snelheid op basis van de formule, dan kan men heel snel te ontwerpsnelheid bepalen.</p>
+            <p>De formule voor het weerstandsvermogen in functie van de snelheid uit de vorige sectie kan gebruikt worden om een normale rit rechtdoor te simuleren op een testbank. Wanneer men dan op een testbank 100 W aan de pedalen aanlegt, de fiets in hoogste assistentie zet en de weerstand aan het wiel regelt in functie van de snelheid op basis van de formule, dan kan men heel snel te ontwerpsnelheid bepalen.</p>
         </div>
     </div>
 </div>
