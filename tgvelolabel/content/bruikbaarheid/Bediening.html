@@ -53,16 +53,16 @@
         <div class="col-md-12">
             <h2>Meten</h2>
 
-            <p>De metingen zijn gebaseerd op observatie. Geef een antwoord op onderstaande vragen.<br>
-            De score is gelijk aan het percentage van de maximaal mogelijke score, dat is 1 min het gemiddelde van de waardes uit testpunten 1 tot 5. Tenzij anders aangegeven wordt per testpunt de waarde “1” gegeven als het antwoord op de vraag positief is.</p>
+            <p>De metingen zijn gebaseerd op observatie. Geef een antwoord op onderstaande vragen.
+            </p>
             
             <ol>
                 <li>Versnellingen (gemiddelde waardes van punt a tot f)
  
                 <ol type="a">
-                    <li>Hoeveel bedieningen zijn er om de overbrengingsverhouding tussen pedalen en wiel te kiezen? Waarde wordt rechtstreeks gebruikt. Voor een fiets met automatische versnellingen of zonder versnellingen, geef 0. (van het moment dat er meer dan 1 bediening is, zal de waarde voor 'versnellingen' negatief zijn)<br/>
+                    <li>Hoeveel bedieningen zijn er om de overbrengingsverhouding tussen pedalen en wiel te kiezen? <br/>
                         <select name="ver1" class="form-control"> 
-                            <option value="0">0 automatische / geen versnellingen</option>
+                            <option value="0">automatische / geen versnellingen</option>
                             <option value="1">1 bediening (bijvoorbeeld draaigreep)</option>
                             <option value="2">2 bedieningen (vaak bij derailleurs)</option>
                             <option value="3">3 of meer bedieningen</option>
@@ -70,8 +70,8 @@
                     </li>
                     <li>Kan één van de bedieningen kan in een 'foute' positie gezet worden (geen index of fout gemonteerd: kan zich bijvoorbeeld verraden als ratelende ketting)?
                     <ul class="inputlist">
-                        <li><input name="ver2" value="1" type="radio"> Ja de bediening kan fout gezet worden (en dus misschien kapot gaan).</li>
-                        <li><input name="ver2" value="0" type="radio"> Neen, de bediening is foolproof.</li>
+                        <li><input name="ver2" value="1" type="radio"> Ja de bediening kan fout gezet worden.</li>
+                        <li><input name="ver2" value="0" type="radio"> Neen, de bediening is zeer duidelijk.</li>
                     </ul>
                     </li>
                     <li>Is één van de bedieningen omgekeerd gemonteerd?
@@ -88,16 +88,16 @@
                     </li>
                     <li>Verbiedt de gebruiksaanwijzing schakelen bij stilstand, of is dit fysiek niet mogelijk?
                         <ul class="inputlist">
-                            <li><input name="ver5" value="0" type="radio">0 = de versnelling kan van zwaarste naar lichtste gezet worden tijdens stilstand</li>
-                            <li><input name="ver5" value="0.5" type="radio">½ = de versnelling kan niet volledig verzet worden, of er zijn bijkomende voorwaarden (bijvoorbeeld er moet eerst achteruit getrapt worden)</li>
-                            <li><input name="ver5" value="1" type="radio">1 = bijvoorbeeld derailleurversnelling</li>
+                            <li><input name="ver5" value="0" type="radio">de versnelling kan van zwaarste naar lichtste gezet worden tijdens stilstand</li>
+                            <li><input name="ver5" value="0.5" type="radio">de versnelling kan niet volledig verzet worden, of er zijn bijkomende voorwaarden (bijvoorbeeld er moet eerst achteruit getrapt worden)</li>
+                            <li><input name="ver5" value="1" type="radio">Er kan niet geschakeld worden bij stilstand</li>
                         </ul>
                     </li> 
                     <li>Is het schakelen tijdens het trappen mogelijk?
                         <ul class="inputlist">
-                            <li><input name="ver6" value="0" type="radio">0 = schakelen tijdens trappen mogelijk in alle omstandigheden, ook bergop bijvoorbeeld en als er kracht gezet wordt op de pedalen</li>
-                            <li><input name="ver6" value="0.5" type="radio">½ = schakelen tijdens trappen in sommige omstandigheden mogelijk</li>
-                            <li><input name="ver6" value="1" type="radio">1 = schakelen tijdens trappen niet mogelijk (kan eventueel getest worden op de e-checker: toerental ongeveer 60 rpm, ongeveer 100W trapaandrijving. Als de versnelling niet geschakeld is binnen 10 rotaties mag aangenomen worden dat het niet mogelijk is. Als het wel mogelijk is om te schakelen bij kleinere belasting, bijvoorbeeld als er geen weerstand gegeven wordt aan het wiel, wordt ½ gegeven.)</li>
+                            <li><input name="ver6" value="0" type="radio">schakelen tijdens trappen is mogelijk in alle omstandigheden, ook bergop bijvoorbeeld en als er kracht gezet wordt op de pedalen</li>
+                            <li><input name="ver6" value="0.5" type="radio">schakelen tijdens trappen is in sommige omstandigheden mogelijk</li>
+                            <li><input name="ver6" value="1" type="radio">schakelen tijdens trappen is niet mogelijk (kan eventueel getest worden op de e-checker: toerental ongeveer 60 rpm, ongeveer 100W trapaandrijving. Als de versnelling niet geschakeld is binnen 10 rotaties mag aangenomen worden dat het niet mogelijk is. Als het wel mogelijk is om te schakelen bij kleinere belasting, bijvoorbeeld als er geen weerstand gegeven wordt aan het wiel, wordt bovenstaande keuze gemaakt.)</li>
                         </ul>
                     </li>
                     </ol></li>
@@ -109,14 +109,14 @@
                                 <input type="number" class="form-control" id="rem1" placeholder="0" value="0"/>
                             </div>
                         </div>
-                    Berekende waarde = (La - 80) / (100 - 80)</li> 
+                    (Berekende waarde = (La - 80) / (100 - 80))</li> 
                     <li>Kleinst overmeten afstand van de achterkant van het stuur tot de voorkant van de rechtse rem (rem niet ingedrukt).
                         <div class="row">
                             <div class="col-md-2">
                                 <input type="number" class="form-control" id="rem2" placeholder="0" value="0"/>
                             </div>
                         </div>
-                    Berekende waarde = (La - 80) / (100 - 80)</li> 
+                    (Berekende waarde = (La - 80) / (100 - 80))</li> 
                     <li>Afstand Lb op de linker remhendel waar de grootst overmeten afstand van de achterkant van het stuur tot de voorkant van de remhendel kleiner is dan 100mm.
                         <div class="row">
                             <div class="col-md-2">
@@ -132,7 +132,7 @@
                         </div>
                     Berekende waarde = (100 - Lb) / 100</li>
                 </ol></li>
-                <li>Bel: moet de hand worden opgehoffen om de bel te bedienin?
+                <li>Bel: moet de hand worden opgehoffen om de bel te bedienen?
                     <ul class="inputlist">
                         <li><input name="bel" value="1" type="radio"> Ja</li>
                         <li><input name="bel" value="0" type="radio"> Neen</li>
