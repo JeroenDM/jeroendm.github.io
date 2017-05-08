@@ -11,6 +11,11 @@ for artistic purpose*/
   src: url(../fonts/Le_Super_Type_Regular.ttf);
 }
 
+@font-face {
+  font-family: "Super Semibold";
+  src: url(../fonts/Le_Super_Type_SemiBold.ttf);
+}
+
 body {
     margin-top: 40px;
     margin-bottom: 20px;
@@ -21,23 +26,23 @@ h1 {
     font-size: 60px;
 }
 
+h3 {
+    font-family: Super Semibold, sans-serif;
+    font-size: 30px;
+}
+
 .tiles .col-md-4 {
-    padding: 5px;
+    padding: 0px;
 }
 
 .tiles ul {
     list-style-type: none;
     margin: 0px;
+    margin-left: 10px;
     padding: 0px;
 }
 
 .tiles li {
-    background-image: url(../image/gear.jpg);
-    background-repeat: no-repeat;
-    background-size: cover;
-    opacity: 0.5;
-    filter: alpha(opacity=50); /* For IE8 and earlier */
-    
     vertical-align: top;
     height: 240px;
     
@@ -45,8 +50,71 @@ h1 {
     margin-bottom: 10px;
     margin-left: 0px;
     margin-right: 0px;
-    padding: 0px;
+    padding: 10px;
 }
+
+.tiles li.wordpress {
+    background-image: url(../image/wordpress_transparant.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.tiles li.photo {
+    background-image: url(../image/schulen_transparant.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.tiles li.climbing {
+    background-image: url(../image/gear_transparant.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.tiles li.github {
+    background-image: url(../image/github_transparant.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.tiles li.cv {
+    background-image: url(../image/cv_transparant.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.tiles li.now {
+    background-image: url(../image/now_transparant.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+/* HOVER */
+
+.tiles li.wordpress:hover {
+    background-image: url(../image/wordpress.png);
+}
+
+.tiles li.photo:hover {
+    background-image: url(../image/schulen_transparant_80.png);
+}
+
+.tiles li.climbing:hover {
+    background-image: url(../image/gear_transparant_80.png);
+}
+
+.tiles li.github:hover {
+    background-image: url(../image/github.png);
+}
+
+.tiles li.cv:hover {
+    background-image: url(../image/cv.png);
+}
+
+.tiles li.now:hover {
+    background-image: url(../image/now_transparant_80.png);
+}
+
 
 @media (min-width: 1200px) {
     .tiles li {
@@ -54,7 +122,17 @@ h1 {
     }
 }
 
+/*
+.tiles li.climbing {
+    background-image: url(../image/gear.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    opacity: 0.5;
+    filter: alpha(opacity=50); 
+}
+
 .tiles li:hover {
     opacity: 1.0;
-    filter: alpha(opacity=100); /* For IE8 and earlier */
+    filter: alpha(opacity=100); 
 }
+*/

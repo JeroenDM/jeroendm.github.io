@@ -1,0 +1,2 @@
+convert schulen.png -alpha set -channel A -evaluate set 50% schulen_transparant.png
+
