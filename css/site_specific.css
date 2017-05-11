@@ -53,54 +53,52 @@ h3 {
     padding: 10px;
 }
 
+.tiles li.climbing {
+    background-image: url(../image/tr_climbing.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
 .tiles li.wordpress {
-    background-image: url(../image/wordpress_transparant.png);
+    background-image: url(../image/tr_wordpress.png);
     background-repeat: no-repeat;
     background-size: cover;
 }
 
 .tiles li.photo {
-    background-image: url(../image/schulen_transparant.png);
-    background-repeat: no-repeat;
-    background-size: cover;
-}
-
-.tiles li.climbing {
-    background-image: url(../image/gear_transparant.png);
+    background-image: url(../image/tr_photo.png);
     background-repeat: no-repeat;
     background-size: cover;
 }
 
 .tiles li.github {
-    background-image: url(../image/github_transparant.png);
+    background-image: url(../image/tr_github.png);
     background-repeat: no-repeat;
     background-size: cover;
 }
 
 .tiles li.cv {
-    background-image: url(../image/cv_transparant.png);
+    background-image: url(../image/tr_cv.png);
     background-repeat: no-repeat;
     background-size: cover;
 }
 
 .tiles li.now {
-    background-image: url(../image/now_transparant.png);
+    background-image: url(../image/tr_now.png);
     background-repeat: no-repeat;
     background-size: cover;
 }
-
-/* HOVER */
 
 .tiles li.wordpress:hover {
     background-image: url(../image/wordpress.png);
 }
 
 .tiles li.photo:hover {
-    background-image: url(../image/schulen_transparant_80.png);
+    background-image: url(../image/photo.png);
 }
 
 .tiles li.climbing:hover {
-    background-image: url(../image/gear_transparant_80.png);
+    background-image: url(../image/climbing.png);
 }
 
 .tiles li.github:hover {
@@ -112,9 +110,8 @@ h3 {
 }
 
 .tiles li.now:hover {
-    background-image: url(../image/now_transparant_80.png);
+    background-image: url(../image/now.png);
 }
-
 
 @media (min-width: 1200px) {
     .tiles li {
@@ -122,17 +119,10 @@ h3 {
     }
 }
 
-/*
-.tiles li.climbing {
-    background-image: url(../image/gear.jpg);
-    background-repeat: no-repeat;
-    background-size: cover;
-    opacity: 0.5;
-    filter: alpha(opacity=50); 
-}
 
+/*
 .tiles li:hover {
     opacity: 1.0;
-    filter: alpha(opacity=100); 
-}
+    filter: alpha(opacity=100);
 */
+
