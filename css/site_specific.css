@@ -26,6 +26,13 @@ h1 {
     font-size: 60px;
 }
 
+div .cover {
+    background-image: url(../image/now.png);
+    background-size: cover;
+    background-position: center;
+    height: 200px;
+}
+
 h3 {
     font-family: Super Semibold, sans-serif;
     font-size: 30px;
