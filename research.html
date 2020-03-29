@@ -1,0 +1,64 @@
+<!doctype html>
+
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+
+    <title>JeroenDM: Research</title>
+    <meta name="description" content="Research Jeroen De Maeyer">
+    <meta name="author" content="Jeroen De Maeyer">
+
+    <link rel="stylesheet" href="css/main.css?v=1.0">
+
+</head>
+
+<body>
+    <div>
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="portfolio.html">Portfolio</a></li>
+            <li><a href="research.html">Research</a></li>
+        </ul>
+    </div>
+    <div class="content">
+        <h1>Publications</h1>
+
+        <h3>Sampling-based Tube Following for Redundant, Planar Robotic Manipulators</h3>
+
+        <code>Jeroen De Maeyer, Mark Versteyhe, Eric Demeester</code>
+
+        <p>This paper introduces a global, sampling-based motion planning approach to the tube following problem for
+            redundant robot manipulators. Tube following is a motion planning problem where an under-defined
+            end-effector path is given. We introduce a novel combination of existing task space and redundant
+            configuration space sampling techniques. These techniques are applied to the tube following problem,
+            comparing three different sampling techniques: uniform grid, uniform random and Halton sampling. In
+            addition, an incremental sampling technique is proposed, specifically for tube following problems.
+            Eventually, iterative grid refining is used to locally optimise path cost. Experimental results demonstrate
+            the clear potential of these techniques to achieve fully automatic, collision-free motion planning for tube
+            following with redundant robot manipulators. Our planning software is publicly available.</p>
+
+        <h3>Cartesian path planning for arc welding robots: Evaluation of the descartes algorithm</h3>
+        <code>Jeroen De Maeyer, Bart Moyaers, Eric Demeester</code>
+
+        <p>Many industrial robot applications require fewer task constraints than the robot’s degrees of freedom. For
+            welding robots, for example, rotations of the welding torch around its axis do not negatively impact welding
+            quality. Furthermore, the tool center point’s Cartesian position and desired orientation as a function of
+            time
+            is often determined by the (manufacturing) process. Nevertheless, programming these robots can be time
+            consuming. Reducing or eliminating this programming cost will allow robots to be used for producing small
+            series. Recently, a promising software package for Cartesian path planning with the name Descartes was
+            released
+            by the ROS-Industrial community. To the authors’ knowledge, an in-depth description of this algorithm and an
+            experimental evaluation is lacking in literature. This paper describes the path planning approach used by
+            the
+            Descartes package. Moreover, the software’s performance is evaluated for several key robot welding tasks and
+            the
+            encountered limitations are discussed. In addition, we show that the planner’s performance can be improved
+            by
+            changing the cost function that the planner’s graph search algorithm minimises.</p>
+
+    </div>
+</body>
+
+</html>
