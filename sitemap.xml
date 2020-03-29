@@ -3,31 +3,31 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
-    <loc>http://example.org/about/</loc>
+    <loc>http://www.jeroendemaeyer.be/about/</loc>
     <lastmod>2020-03-29T14:27:44+02:00</lastmod>
   </url>
   
   <url>
-    <loc>http://example.org/</loc>
+    <loc>http://www.jeroendemaeyer.be/</loc>
     <lastmod>2020-03-29T14:27:44+02:00</lastmod>
   </url>
   
   <url>
-    <loc>http://example.org/portfolio/</loc>
+    <loc>http://www.jeroendemaeyer.be/portfolio/</loc>
     <lastmod>2020-03-19T18:09:46+01:00</lastmod>
   </url>
   
   <url>
-    <loc>http://example.org/research/</loc>
+    <loc>http://www.jeroendemaeyer.be/research/</loc>
     <lastmod>2020-03-19T18:04:14+01:00</lastmod>
   </url>
   
   <url>
-    <loc>http://example.org/categories/</loc>
+    <loc>http://www.jeroendemaeyer.be/categories/</loc>
   </url>
   
   <url>
-    <loc>http://example.org/tags/</loc>
+    <loc>http://www.jeroendemaeyer.be/tags/</loc>
   </url>
   
 </urlset>

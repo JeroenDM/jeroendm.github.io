@@ -2,30 +2,30 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Jeroen&#39;s personal site</title>
-    <link>http://example.org/</link>
+    <link>http://www.jeroendemaeyer.be/</link>
     <description>Recent content on Jeroen&#39;s personal site</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Sun, 29 Mar 2020 14:27:44 +0200</lastBuildDate>
     
-	<atom:link href="http://example.org/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="http://www.jeroendemaeyer.be/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>About</title>
-      <link>http://example.org/about/</link>
+      <link>http://www.jeroendemaeyer.be/about/</link>
       <pubDate>Sun, 29 Mar 2020 14:27:44 +0200</pubDate>
       
-      <guid>http://example.org/about/</guid>
+      <guid>http://www.jeroendemaeyer.be/about/</guid>
       <description>I&amp;rsquo;m currently pursuing a PhD in robot motion planning at KU Leuven in Belgium. Besides reading papers, this included programming Python and C++ in large quantities. In recent years whe&amp;rsquo;ve seen an increased demand for flexible production. By improving industrial robot motion planning algorithms and focussing on open-source development, I hope that small companies can stay competitive.</description>
     </item>
     
     <item>
       <title>Portfolio</title>
-      <link>http://example.org/portfolio/</link>
+      <link>http://www.jeroendemaeyer.be/portfolio/</link>
       <pubDate>Thu, 19 Mar 2020 18:09:46 +0100</pubDate>
       
-      <guid>http://example.org/portfolio/</guid>
+      <guid>http://www.jeroendemaeyer.be/portfolio/</guid>
       <description>MoveIt kinematics plugin https://github.com/JeroenDM/moveit_opw_kinematics_plugin
 After working with the analytical inverse kinematics library opw kinematics. I decided to try writing a MoveIt kinematics plugin for it. The plugin has evolved a bit and I was lucky enough to get some help from @simonschmeisser.
 3D Python Robotics https://github.com/JeroenDM/acrobotics
@@ -34,10 +34,10 @@ As an extension of Planar Python Robotics below, I started implementing simple m
     
     <item>
       <title>Publications</title>
-      <link>http://example.org/research/</link>
+      <link>http://www.jeroendemaeyer.be/research/</link>
       <pubDate>Thu, 19 Mar 2020 18:04:14 +0100</pubDate>
       
-      <guid>http://example.org/research/</guid>
+      <guid>http://www.jeroendemaeyer.be/research/</guid>
       <description>Robotics Sampling-based Tube Following for Redundant, Planar Robotic Manipulators Jeroen De Maeyer, Mark Versteyhe, Eric Demeester
 This paper introduces a global, sampling-based motion planning approach to the tube following problem for redundant robot manipulators. Tube following is a motion planning problem where an under-defined end-effector path is given. We introduce a novel combination of existing task space and redundant configuration space sampling techniques. These techniques are applied to the tube following problem, comparing three different sampling techniques: uniform grid, uniform random and Halton sampling.</description>
     </item>
