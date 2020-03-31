@@ -50,14 +50,31 @@ body {
     -webkit-text-size-adjust: 100%;
 }
 
+.content {
+    padding-bottom: 5%;
+}
+
+.footer {
+    left: 0;
+    bottom: 1%;
+    width: 100%;
+    text-align: center;
+    font-size: 1em;
+  }
+
 h1 {
-    font-size: 60px;
+    font-size: 4em;
     line-height: 1.3em;
     font-feature-settings: "liga", "tnum", "case", "calt", "zero", "ss01", "locl";
 }
 
+h2 {
+    font-size: 2.5em;
+    padding-left: 2%;
+}
+
 h3 {
-    font-size: 30px;
+    font-size: 1.8em;
 }
 
 a {
@@ -81,9 +98,19 @@ code {
 
 img {
     display: block;
-    max-width: 100%;
+    margin-left: auto;
+    margin-right: auto;
     margin-top: 5%;
-  }
+    max-width: 60%;
+}
+
+.img-footer {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 60%;
+    font-size: 0.8em;
+}
 
 /* navigation bar */
 
