@@ -139,3 +139,34 @@ li a {
 li a:hover {
     background-color: #111;
 }
+
+input[type=text] {
+    border: 0;
+    padding: 2px;
+}
+
+input[type=text]:hover {
+    border: 0;
+    background-color: blanchedalmond;
+}
+
+input[type=text]:focus {
+    border: 0;
+    background-color: blanchedalmond;
+    outline: none;
+}
+
+.output {
+    display: flex;
+    flex-direction: column;
+    align-content: center;
+    width: 200px;
+}
+
+.row {
+    padding: 2px;
+    border: 2px;
+    border-radius: 10px; 
+    border-color: #23B0FF;
+    text-align: center;
+}
